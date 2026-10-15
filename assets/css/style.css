@@ -267,3 +267,23 @@ details.faq summary{font-size:19px}
 .ct figcaption span{font-size:15px;line-height:1.4}
 @media (max-width:640px){.cc-big{width:300px}.cc-big .ct{height:480px}.cc-grid{width:310px;grid-template-columns:150px 150px;grid-template-rows:235px 235px}.ct figcaption strong{font-size:19px}.cc-grid .ct figcaption strong{font-size:16px}.ct figcaption span{font-size:13px}}
 .kicker+h2{text-align:center}
+
+/* lightbox */
+.ct{cursor:pointer}
+.ct:hover img{transform:scale(1.03)}.ct img{transition:transform .3s}
+body.lb-open{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:200;background:#fff;display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb-body{display:flex;align-items:center;gap:48px;max-width:min(1100px,86vw);max-height:84vh;padding:0 8px}
+.lb-img{flex:1 1 60%;min-width:0;display:flex;justify-content:center}
+.lb-img img{max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:0}
+.lb-text{flex:0 1 34%;min-width:200px}
+.lb-text h3{margin:0 0 .5em;font-size:clamp(24px,3vw,40px);font-weight:500}
+.lb-text p{margin:0;font-size:18px;color:#444}
+.lb button{font:inherit;background:none;border:0;cursor:pointer;color:#222}
+.lb-x,.lb-fs{position:absolute;top:18px;font-size:28px;line-height:1;padding:10px}
+.lb-x{right:22px}.lb-fs{left:22px}
+.lb-nav{font-size:52px;line-height:1;padding:12px 18px;position:absolute;top:50%;transform:translateY(-50%);opacity:.7}
+.lb-nav:hover{opacity:1;color:var(--red)}
+.lb-prev{left:10px}.lb-next{right:10px}
+@media (max-width:760px){.lb-body{flex-direction:column;gap:18px;max-width:92vw;max-height:88vh;overflow:auto;padding-top:56px}.lb-img img{max-height:52vh}.lb-text{flex:none;min-width:0;width:100%}.lb-nav{font-size:40px;top:34%}}
