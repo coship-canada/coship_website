@@ -19,6 +19,9 @@ const has = (p) => fs.existsSync(path.join(ROOT, p));
 
 /* ---------- images / embeds ---------- */
 const usedImages = new Set();
+import crypto from 'node:crypto';
+const hashOf = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT, f))).digest('hex').slice(0, 8);
+const ASSET_V = { css: hashOf('assets/css/style.css'), js: hashOf('assets/js/main.js') };
 let ICONS = new Set();
 const placeholders = new Map(); // uri -> svg
 const HOTLINK = process.env.WIX_HOTLINK === '1';
@@ -289,7 +292,7 @@ ${altOK ? `<link rel="alternate" hreflang="${other.lang}" href="${site.siteUrl}$
 <link rel="alternate" hreflang="${L.lang}" href="${canonical}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(fullTitle)}">${desc ? `<meta property="og:description" content="${esc(desc)}">` : ''}<meta property="og:url" content="${canonical}"><meta property="og:image" content="${imgSrc(site.logo)}">
 <link rel="icon" href="${imgSrc(site.favicon)}">
-<link rel="stylesheet" href="${BASE}/assets/css/style.css">
+<link rel="stylesheet" href="${BASE}/assets/css/style.css?v=${ASSET_V.css}">
 ${extraHead}
 </head>
 <body>
@@ -322,7 +325,7 @@ ${body}
     <p class="copy">© ${new Date().getFullYear()} COSHIP. All rights reserved.</p>
   </div>
 </footer>
-<script src="${BASE}/assets/js/main.js" defer></script>
+<script src="${BASE}/assets/js/main.js?v=${ASSET_V.js}" defer></script>
 </body>
 </html>`;
 }
