@@ -1,0 +1,179 @@
+=== /general-6
+TITLE: Buy& Ship from Korea | COSHIP
+DESC:
+NOTE: placeholder page on Wix (template text "Page Title"); not linked from nav — skip
+IMG: 62e435_3f64b4cf85094033908540e056a45382~mv2.png
+/ Commercial Shipping / Buy & Ship from Korea
+# Your Korean Finds, Delivered to Canada.
+# Shop yourself or let us buy for you. We’ll bring your purchases together and ship them to your door in Canada.
+CTA: Start an Inquiry
+
+=== /blog
+TITLE: COSHIP Blog | Canada Logistics, Moving & Life Insights
+DESC: Discover tips for international moving, real vehicle shipping cases, and local insights into life in Canada. Stay updated with the latest news from COSHIP.
+# All Posts
+IMG: 62e435_d6e2faf91d6143f096b6e10d3be387ac~mv2.jpg | alt=Founder’s Story ①
+BTN: Founder’s Story ① -> /post/founder-s-story
+## Founder’s Story ①
+
+=== /post/founder-s-story
+TITLE: Founder’s Story ①
+DESC:
+Where It All Began: The COSHIP Story
+#### When you've been running a company for many years, there comes a moment when you pause and ask: "How did we get here?"
+#### I began my career in logistics in 1996, working at the Korean agency office of a New Zealand-based shipping line. Four years later, I moved to a new company, where I met my husband, who worked in sales. We got married in 2002.
+IMG: 62e435_351558104c7d4031a1eaf81a6e94f419~mv2.jpg
+#### In 2007, we made the decision to start a new chapter. We moved to Canada with our two young children — one just ten months old, the other only two years old. The day after we arrived, we started what would eventually become COSHIP.
+#### There was no time for jet lag. We had one goal: to build something in this new country as quickly as possible.
+IMG: 62e435_4ea9ffceb0e54f38bdf8c84c68609b84~mv2.jpg
+#### My English wasn't fluent. I wasn't comfortable driving yet. Our children were still very young. Whatever I couldn't finish during the day at the office, I continued working on at home after they fell asleep. There were many nights when I cried alone without letting my family know. Back then, I was simply working to survive.
+#### At the time, there was a large wave of Korean students and immigrants coming to Canada, and international moving became the core of our business.
+#### Then one day, I received a call from a student preparing to return to Korea. She wanted to send just two pieces of luggage home. At the time, there were very few options available for small shipments like hers, as most companies only handled full-scale international moves. Listening to her story, I knew we had to find a way to help.
+#### That conversation became the beginning of our sea small-cargo shipping service. As demand grew, we later expanded into air courier services as well.
+IMG: 62e435_ac7a4569084b43f79488ab83f0d0a6b9~mv2.jpg
+#### Looking back, many of the services COSHIP offers today began the same way — with a customer's story. Freight forwarding started when a business owner asked for help importing goods from Korea. Our purchasing and export support service was created because customers in Canada found it difficult to buy Korean products on their own. And as more clients began selling online, our 3PL fulfillment services developed naturally alongside them.
+#### I also think about how much has changed since we first arrived. When I told people I was from Korea, most would ask, "North or South?" That was often the extent of what people knew at the time. My children were teased at school for bringing seaweed as a snack — some classmates called it "black paper."
+#### Today, however, many Canadians talk about K-pop, enjoy Korean food, and actively look for Korean products. I watched that transformation happen right here, where we were building our lives.
+#### During that same time, COSHIP also continued to grow — from connecting Korea and Canada to supporting customers across China, Japan, the United States, Europe, Australia, and beyond.
+#### Even today, we continue to evolve by listening carefully to our customers and developing better logistics solutions to meet their needs.
+#### As we refresh our website, I wanted to take a moment to share not only what we do, but how we got here — and why we built the services we did. I hope this story helps you better understand who we are and why we continue to grow the way we do.
+#### This is the first of those stories.
+IMG: 62e435_93ada13c53e84758ba2609a72f55a52f~mv2.jpg
+### This is where it started.
+### A small rented office in Coquitlam.
+IMG: 62e435_791af8dce67a41e0b69c198008941fde~mv2.png
+IMG: 62e435_a033bfa6aeb64d37b2c8f75d4e69c945~mv2.jpg
+### Seventeen years later, we returned to Coquitlam. This time, in a building of our own.
+### — Stella, Founder & CEO, COSHIP
+
+=== /post/founder-s-story-1
+TITLE: Post | COSHIP
+DESC:
+### COSHIP의 이야기를 시작하며
+회사를 오래 운영하다 보면 어느 순간 이런 생각을 하게 됩니다.
+"우리는 어떻게 여기까지 오게 되었을까?"
+저는 1996년, 뉴질랜드 선사의 한국 에이전트 사무실에서 처음 물류 일을 시작했습니다. 4년 뒤 새로운 회사로 이직했고, 2002년에는 그 회사 영업부에서 일하던 남편을 만나 결혼했습니다.
+IMG: 62e435_031517a7916d4d93b3a50af578fa4832~mv2.jpg
+그리고 2007년, 10개월과 두 살이었던 두 아이와 함께 캐나다로 이민을 왔습니다. 캐나다에 도착한 바로 다음 날부터 지금의 회사를 시작했습니다.
+IMG: 62e435_ce4a904e86694b44a1a3de7018852438~mv2.jpg
+그때의 저에게 시차 적응은 사치였습니다. 하루라도 빨리 이곳에 정착하고 싶다는 마음 하나로 밤낮없이 일했습니다. 영어도 서툴렀고, 운전도 익숙하지 않았고, 아이들은 아직 너무 어렸습니다. 낮에 사무실에서 다 끝내지 못한 일은 아이들을 재운 뒤 집에서 다시 이어서 해야 했습니다. 가족들 몰래 혼자 울었던 날도 많았습니다. 그때는 단지 살아남기 위해 일했습니다.
+당시 캐나다에는 유학생과 이민자들의 이동이 매우 활발했고, 해외이사 서비스가 회사의 가장 중요한 중심 업무였습니다.
+그러던 어느 날, 한국으로 돌아가던 한 유학생에게서 이민 가방 두 개를 한국으로 보내고 싶다는 상담 전화를 받았습니다. 그 학생에게는 모두 소중한 짐이었지만, 당시에는 이런 소량 화물을 보낼 수 있는 방법이 거의 없었고 대부분의 회사들이 해외이사 서비스만 제공하고 있었습니다.
+그 이야기를 계기로 선박을 이용한 소량 택배 서비스를 시작하게 되었고, 이후 고객들의 필요에 따라 항공 택배 서비스까지 확대하게 되었습니다.
+IMG: 62e435_63a80aa8f3b04c989764a446693dbf7d~mv2.jpg
+돌이켜 보면 우리 회사의 많은 서비스는 이렇게 고객의 작은 이야기에서 시작되었습니다. 사업을 시작한 고객이 한국에서 물건을 들여오고 싶다는 상담에서 포워딩 서비스가 시작되었고, 캐나다에서 한국 물건을 구매하기 어렵다는 고객들의 불편함에서 구매대행 서비스가 만들어졌으며, 온라인 판매를 시작한 고객들과 함께 3PL 서비스도 자연스럽게 확장되었습니다.
+또 한편으로는, 제가 처음 캐나다에 왔을 때만 해도 한국에서 왔다고 하면 "북한이냐 남한이냐"라는 질문이 대부분이었고, 그 외에는 한국에 대해 아는 것이 거의 없던 시기였습니다. 아이들이 학교에 김을 가져가면 검은 종이를 먹는다고 놀림을 받기도 했습니다.
+하지만 지금은 많은 캐나다인들이 K-pop을 이야기하고, 한국 음식을 좋아하고, 한국 제품을 찾습니다. 저는 그 변화를 이곳에서 직접 지켜보았습니다.
+그리고 그 시간 동안 COSHIP 역시 한국과 캐나다를 연결하는 일에서 출발해, 이제는 중국, 일본, 미국, 유럽, 호주 등 전 세계 다양한 고객들과 함께하는 물류 회사로 성장해 왔습니다. 지금도 우리는 고객의 필요에 맞추어 새로운 서비스를 만들고 더 나은 방법을 고민하며 계속 변화하고 있습니다.
+이번에 홈페이지를 새롭게 정리하면서, 우리가 어떤 과정을 지나 여기까지 오게 되었는지, 그리고 왜 지금과 같은 서비스들을 만들게 되었는지를 조금 더 편안한 이야기로 전해 보고 싶었습니다. 이 글이 COSHIP이라는 회사를 이해하는 작은 도움이 되기를 바랍니다.
+이 글은 그 첫 번째 이야기입니다.
+IMG: 62e435_93ada13c53e84758ba2609a72f55a52f~mv2.jpg
+2007년, 코퀴틀람의 작은 렌트 사무실에서 시작했습니다.
+IMG: 62e435_3cad29da70f84a62b836cef034c07a2b~mv2.jpg
+IMG: 62e435_d6e2faf91d6143f096b6e10d3be387ac~mv2.jpg
+2024년, 같은 코퀴틀람으로 돌아왔습니다. 이번에는 우리 건물로.
+— COSHIP 대표 Stella
+
+=== /termsandconditions
+TITLE: terms and conditions | COSHIP
+DESC:
+# COSHIP Terms and Conditions
+###### Effective Date: April 22, 2026
+## Article 1. Scope of Services
+COSHIP provides international air and ocean transportation services between Canada and the Republic of Korea. Depending on the shipment route, COSHIP may act as a carrier or as a logistics intermediary working with partner carriers such as UPS, airlines, ocean carriers, and customs brokers.
+## Article 2. Customer Responsibilities
+Customers must provide accurate sender and recipient information, shipment contents, declared value, weight, and dimensions. COSHIP is not responsible for delays, customs issues, additional charges, returns, or disposal caused by inaccurate or incomplete information.
+## Article 3. Customs Clearance
+All international shipments are subject to customs inspection. Unless otherwise specified, duties and taxes are the responsibility of the recipient. COSHIP does not guarantee successful customs clearance.
+## Article 4. Prohibited and Restricted Items
+All shipments must comply with Canadian, Korean, and international shipping regulations. Undeclared restricted items may be returned or disposed of without compensation. Lithium batteries cannot be shipped alone.
+## Article 5. Packaging Responsibility
+Proper packaging suitable for international transportation is the responsibility of the customer. COSHIP is not responsible for damage caused by insufficient packaging.
+## Article 6. Fragile and Oversized Items
+Fragile items (e.g., glass, frames, electronics), televisions, and oversized cargo have limited eligibility for compensation unless additional insurance has been purchased.
+## Article 7. Use of Third-Party Carriers
+Portions of transportation may be performed by partner carriers including airlines, ocean carriers, railways, trucking companies, courier services, and customs brokers. In such cases, the terms and conditions of the respective carrier may apply to that specific segment of transit.
+## Article 8. Compensation Limits
+[International Moving Services] Compensation for moving cargo is handled exclusively through the insurance provider for insured shipments only.
+[Courier/Parcel Services] Standard Courier services do not include separate insurance. Compensation limits are as follows:
+- Canada > Korea : up to the declared value or a maximum of CAD $400 for total loss.
+- Korea > Canada (Air): up to the declared value or a maximum of CAD $100 for total loss.
+The declared value is for customs purposes and does not constitute insurance coverage. Partial loss or damage is not eligible for compensation for courier shipments.
+## Article 9. Insurance
+Insurance can be requested at the time of shipment acceptance and added up until the shipment departs from the point of origin. (Note: Insurance is not available for standard courier/parcel services.)
+## Article 10. Courier Shipment Cancellation Policy
+Air Courier Service : if a customer asks to cancel the service before the shipment leaves COSHIP’s warehouse, courier service fee will be fully refundable.
+Ocean Courier : If a cancellation is requested before vessel loading, service fee will be fully refundable.
+Non-Refundable Fees: Pickup fees and packing material costs are non-refundable regardless of the cancellation timing.
+Post-Dispatch: Once a shipment has been dispatched, cancellations and refunds are not available.
+Unsent Shipment Retrieval: Upon cancellation, the customer is responsible for picking up the unsent shipment from COSHIP's designated facility.
+This Article does not apply to international moving services. Please refer to Article 11.
+## Article 11. International Moving Service Cancellation Policy
+- 10+ days before pickup: Full refund (provided packing materials are unused).
+- 9–7 days before pickup: The deposit is non-refundable.
+- 6–1 day before pickup: A penalty equal to four (4) times the deposit amount is payable.
+- On the scheduled pickup date: A penalty equal to six (6) times the deposit amount is payable.
+- If packing materials are used: Boxes: CAD $10 per box; Packing materials: CAD $50; Material pickup service: CAD $100 will be charged.
+- If cancellation is due to the Company’s responsibility: The deposit will be fully refunded.
+## Article 12. Delivery Time
+Transit times are estimates only and are not guaranteed. COSHIP is not responsible for delays caused by customs inspections, airline schedule changes, port congestion, weather conditions, or events beyond its control.
+## Article 13. Undeliverable Shipments
+Shipments may be returned or disposed of if delivery cannot be completed due to incorrect address, recipient refusal, unpaid duties, or customs clearance failure.
+## Article 14. Shipment Inspection
+Shipments may be inspected without prior notice when required by applicable regulations. If a shipment is selected for inspection by customs authorities, all associated inspection fees are the responsibility of the shipper (owner of the goods).
+## Article 15. Limitation of Liability
+COSHIP is not responsible for indirect damages, business losses, customs issues, improper packaging, prohibited items, or force majeure events.
+## Article 16. Rate Changes
+Shipping rates and service policies may change without prior notice.
+## Article 17. Website Use
+Information on the website is provided for general guidance only and may change without notice.
+## Article 18. Privacy Protection
+Personal information is handled in accordance with COSHIP Privacy Policy: www.coship.ca/privacy
+## Article 19. Governing Law
+These Terms are governed by the laws of the Province of British Columbia, Canada. However, where services are requested or provided in another country, mandatory local laws of that country may take precedence where applicable.
+
+=== /privacypolicy
+TITLE: privacy policy | COSHIP
+DESC:
+# Privacy Policy
+###### Effective Date: April 22, 2026
+COSHIP (“the Company”) values your personal information and complies with applicable privacy laws.
+This Privacy Policy applies to Canada Orient Shipping Ltd. and Canada Shipping Co., Ltd. (Korea), and explains how personal information collected through website use or inquiry submissions is handled.
+## Article 1. Personal Information Collected
+The Company may collect the following personal information voluntarily provided through inquiries:
+- Name
+- Email address
+- Phone number
+- Shipping-related inquiry details
+The following information may also be collected automatically:
+- IP address
+- Browser type
+- Device information
+- Website visit history
+This information is used to improve service quality.
+## Article 2. Purpose of Collection and Use
+Personal information is used only for the following purposes:
+- Responding to inquiries
+- Providing logistics and shipping consultation
+- Service-related notifications
+- Website functionality improvement
+Personal information is not used for marketing purposes without user consent.
+## Article 3. Retention Period
+Personal information collected through inquiry forms is retained for up to one year and then securely deleted.
+However, where retention is required by applicable law, information may be retained for the required period.
+Collected personal information may be processed and stored on servers located in Canada or the Republic of Korea.
+## Article 4. Sharing with Third Parties
+The Company does not provide personal information to third parties for marketing purposes.
+However, where necessary to perform requested logistics or shipping services, limited information may be shared with transportation partners such as airlines, ocean carriers, courier providers, and customs brokers.
+Such information is shared only to the extent necessary to provide services and is not used for any purpose other than transportation service fulfillment.
+## Article 5. Cookies and Automatically Collected Data
+Technical data such as cookies may be collected automatically to improve service quality and usability.
+Users may disable cookies through browser settings if preferred.
+## Article 6. Protection Measures
+The Company implements reasonable administrative and technical safeguards to protect personal information.
+## Article 7. User Rights
+Users may request access to, correction of, or deletion of their personal information at any time.
+## Article 8. Contact Information
+For privacy-related inquiries, please contact:
+COSHIP
+Email: ads@coship.ca

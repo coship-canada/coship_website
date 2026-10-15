@@ -1,0 +1,18 @@
+=== /partner-tracking
+TITLE: Tracking | COSHIP
+DESC:
+NOTE: hidden partner tracking page (not in nav); same tracker + Canada Post link
+IMG: 62e435_a35cd7c27dd64f64ba8025e9fc872c34~mv2.jpeg
+# Tracking
+###### Canada-based logistics company since 2007, specializing in Korea–Canada shipping
+BTN: Track -> (tracking form submit)
+IMG: 62e435_f465d24f8ce24a84ab6d23a92f2b35c1~mv2.png
+##### Canada-Korea・Since 2007
+BTN: International Moving -> /international-moving
+BTN: Freight Forwarding -> /freight-forwarding
+BTN: Vehicle Transport -> /vehicle-transport
+BTN: Courier -> /courier-ecommerce
+IMG: 62e435_431e19b494be4441a8ac037f7d28f8b4~mv2.png | alt=캐나다포스트.png
+#### Final delivery by
+BTN: Track with Canada Post -> https://www.canadapost-postescanada.ca/track-reperage/en/home
+EMBED: tracking

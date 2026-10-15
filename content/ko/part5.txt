@@ -1,0 +1,235 @@
+=== /ko/freight-forwarding-faq
+TITLE: 상업화물 FAQ | 기업 수출입 물류 | 캐나다쉬핑
+DESC: B2B 상업화물, 컨테이너 수출입, 통관 서류 및 포워딩 절차 등 기업 화주분들이 실무적으로 자주 묻는 질문을 모았습니다.
+BTN: FAQ 카테고리 -> /ko/faq
+# 상업화물 FAQ
+##### 상업 화물 운송부터 통관까지, 항공·해상 통합 물류 서비스
+### 첫 수입인데 어떤 준비가 필요할까요?
+기본적으로 Commercial Invoice, Packing List, 수입자 정보(Business Number), HS Code가 필요합니다.
+또한 캐나다로 상업화물을 수입하려면 CARM(Client Portal) 등록이 필수입니다. 아직 등록하지 않으셨다면 COSHIP이 CARM 등록부터 통관까지 전 과정을 안내해 드립니다.
+### CARM 등록은 꼭 해야 하나요?
+CARM(CBSA Assessment and Revenue Management)은 캐나다 세관(CBSA)의 수입 통관 및 관세 관리 시스템입니다. 캐나다로 상업화물을 수입하는 모든 사업자는 CARM 등록이 필요하며, 등록이 완료되어야 원활한 통관이 가능합니다. 처음 이용하시는 고객은 COSHIP이 등록 절차를 안내해 드립니다.
+### 세관 검사는 왜 발생하나요?
+세관 검사는 랜덤 또는 특정 품목/신고 내용에 따라 Canada Border Services Agency에 의해 진행되며, 사전 예측은 어렵습니다.
+### 세관 검사 비용은 어떻게 되나요?
+세관 검사는 CBSA가 랜덤으로 진행합니다. 검사 대상으로 지정되면 검사 완료 전까지 다음 단계로 진행할 수 없으며, 검사비와 기타 부대비용이 발생합니다. 다만 검사가 COSHIP 자사 창고 내에서 진행되는 경우 개별 검사비는 무료입니다.
+### 수입이 불가능한 품목도 있나요?
+네, 식품, 의약품, 배터리, 화학제품 등 일부 품목은 별도 인증 또는 수입 제한이 있을 수 있습니다. 사전 확인을 권장드립니다.
+### 캐나다로 상업화물을 수입하려면 무엇이 필요한가요?
+캐나다로 상업화물을 수입하려면 수입자 등록, CARM 등록, 통관 서류 준비, 국제운송, 보세창고 반입, 통관, 내륙배송 등의 절차가 필요합니다. COSHIP은 이 전 과정을 One-Stop으로 지원합니다.
+IMG: 62e435_24917eba2eb24e8fa224686ff3df2274~mv2.png | alt=블로그 169 썸네일 (23).png
+### 화물 운송, 어떻게 시작해야 할지 고민되시나요?
+###### 화물 내역과 희망 경로를 남겨주시면, 고객님께 가장 적합한 물류 서비스를 안내해 드리겠습니다.
+BTN: Contact Us -> /ko/contact
+
+=== /ko/3plfulfillment
+TITLE: 캐나다 3PL 풀필먼트 및 맞춤형 물류 컨설팅 | COSHIPOSHIP
+DESC: 성공적인 북미 비즈니스를 위한 B2B 물류 컨설팅 및 3PL 솔루션. 체계적인 캐나다 현지 창고 보관, 재고 관리 및 풀필먼트로 운영 효율을 극대화해 드립니다.
+IMG: 62e435_a5872798d252476cac0ebc2203f8fb3e~mv2.png
+/ 3PL 풀필먼트
+## 캐나다 3PL 풀필먼트 및 창고 운영
+## 국제 운송, 보관, 주문 처리, 배송 및 반품까지 캐나다 풀필먼트를 통합 관리합니다.
+CTA: 지금 바로 상담 받기
+# COSHIP만의 차별화된 3PL
+IMG: 62e435_95a7a01d1c5445ee86afb6bdf393159a~mv2.png | alt=gear-light.png
+### 원스톱 시스템
+포워딩부터 배송까지 하나의 흐름으로 연결
+IMG: 62e435_9edfcf988e3d4a51a19304af08e5808d~mv2.png | alt=truck-trailer-light.png
+### 정밀도
+UPC 스캔 및 S/N 관리로
+오배송 제로화 및 재고 정확도 향상
+IMG: 62e435_61774012458a4f63902cea825e30328e~mv2.png | alt=hand-coins-light.png
+### 비용 절감
+자체 보세창고 운영으로 불필요한
+이송비 및 검사비 절약
+IMG: 62e435_27dc2e5cae2d4ec3bf7af4a254ccca18~mv2.png | alt=handshake-light.png
+### 파트너십
+전담 매니저의 책임 있는 소통으로
+안심할 수 있는 물류 환경 제공
+IMG: 62e435_560d5b159105428cbbf421f07ca90706~mv2.jpg
+물류 루트 솔루션
+##### 화물의 출발지가 어디든, 밴쿠버 도착 즉시 COSHIP의 원스톱 솔루션이 시작됩니다
+### Option 1
+### 한국에서부터 풀케어 관리
+##### 한국 지사를 통해 수출 선적(Export)부터 해상/항공 운송, 현지 통관까지 완벽하게 통합 관리합니다.
+### Option 2
+### 전 세계에서 포트 투 포트
+##### 한국 외 전 세계 어느 국가에서 생산된 화물도 가능합니다. 밴쿠버 자사 보세창고를 기반으로 제3국 출발 화물의 통관부터 풀필먼트까지 원스톱으로 관리합니다.
+### 일반 3PL vs COSHIP 3PL
+##### 글로벌 비즈니스를 위한 COSHIP만의 압도적인 혜택을 확인하세요.
+COMPARE: (diagram; rebuild same as freight-forwarding)
+ 일반 3PL 흐름: 1. 밴쿠버 포트 → 2. 수입 내륙 운송 → 3. 보세창고 → 4. 통관 → 5. 로컬 배송 → 3PL 창고
+ COSHIP 3PL 흐름: 1. 밴쿠버 포트 → 2. 수입 내륙 운송 → 3. COSHIP 보세창고 (통관·보관·3PL 일원화)
+ IMG: 62e435_18355b1ac3f14a6fae27affc5a1536d0~mv2.png
+ IMG: 62e435_9dad4fe9aea343e581a57026071f8520~mv2.png
+ IMG: 62e435_a82c6a381df44cd98c30ac7ce1ff8eb0~mv2.png
+ IMG: 62e435_9f5bb2faabe846a1b1bf6214af0ccf90~mv2.png
+ IMG: 62e435_d6f44fc40f8547daa6c0f2f66dc32626~mv2.png
+ IMG: 62e435_c371110a14da46708f45c277befd1d20~mv2.png
+ IMG: 62e435_af78cff0446249669c5058f4da8c53ee~mv2.png | alt=crane-tower-light (2).png
+TABLE: 항목 | 일반 3PL | COSHIP 3PL
+TABLE: 무료 보관 | 3-5일 | 14일 (주말 및 공휴일 포함)
+TABLE: 통관 검사비 | 건당 과금 | 무료 (자사 창고)
+IMG: 62e435_8341506ed11b48368dcacc1dd80f9052~mv2.png | alt=check-circle-fill.png
+IMG: 62e435_8943ee8640fa4560b1fd80000ea1f5de~mv2.png | alt=magnifying-glass-light.png
+※ 창고 보관료는 면제되지만, 항만에서 무작위로 진행되는 CBSA Dock 검사 비용은 당사 통제 범위를 벗어나며 실비로 청구됩니다.
+## CBSA 인증 보세창고 운영
+IMG: 62e435_f39bfeacd5cb400498fcfa54c6f0d581~mv2.jpeg
+IMG: 62e435_5e4db6dce1f049a4bd8562734bfb0a56~mv2.jpg | alt=LYJ1122-86_edited_edited_edited.jpg
+COSHIP은 단순 3PL 창고가 아닙니다.
+캐나다 관세청(CBSA)이 인증한 자사 보세창고를 직접 운영합니다.
+보세창고에서 통관 완료 후, 타 창고로 물건을 이동할 필요 없이 즉시 출고 준비가 완료됩니다.
+## 오배송 예방을 위한 출고 검증 시스템
+##### 기계를 넘어서는 꼼꼼함, 오배송 0% 도전
+IMG: 62e435_ce9416cfdb7c4208bcac655042fec4a3~mv2.png | alt=user-check-light.png
+1. 관리자 정밀 검토
+숙련된 관리자가 주소지 오류 및 기재 실수를 1차 필터링하여 배송 사고를 예방합니다.
+IMG: 62e435_6cfccff25d1b47aa9ec55d1eb1f96e7e~mv2.png
+2. 이중 검증 스캔
+출고 직전, 제품의 UPC를 직접 스캔하여, 주문 내역과 실물의 일치 여부를 한 번 더 교차 검증합니다.
+3. 시리얼 넘버 트래킹
+고가 전자제품 등을 위한 시리얼 넘버 기록 서비스 제공하며, 반품 시 '제품 바꿔치기' 등의 악성 이슈를 방어합니다.
+## 행정 가이드 서비스
+까다로운 캐나다 행정, 전문가가 가이드해 드립니다.
+IMG: 62e435_1b5e62e530d0432496718595976c78e3~mv2.png | alt=user-circle-gear-light.png
+### NRI (Non-Resident Importer) 등록 대행
+캐나다 현지 법인이 없어도 됩니다. 한국이나 제3국 사업자가 캐나다의 공식 수입자(Importer)가 될 수 있도록 NRI 등록 대행 서비스를 제공합니다.
+IMG: 62e435_d9797a0949374ed19b806015531996a8~mv2.png | alt=info-light.png
+### CARM 등록 가이드
+캐나다로 물품을 수입하는 수입자라면 CARM (CBSA Assessment and Revenue Management) 등록이 필수요건입니다. 복잡한 등록 절차를 가이드해드립니다.
+### 수입 부가세 환급
+해외 사업자(NRI)도 수입 통관 시 납부한 GST는 요건 충족 시 환급 신청이 가능합니다. 필요 시 세무 회계·세무 전문가(CPA/Tax Professional) 연계를 도와드립니다.
+## 셋업 시간은 줄이고, 운영 효율은 높이고
+##### 복잡한 준비는 필요 없습니다. 계정 공유만으로 즉시 시작하세요.
+IMG: 62e435_c3c0381f529441f7bee3f4517e1b0d58~mv2.png | alt=rocket-launch-light.png
+### 즉시 시작 가능한 온보딩
+##### API 개발 없이 기존 쇼핑몰·ERP 계정 공유만으로 물류 업무를 즉시 시작할 수 있습니다.
+IMG: 62e435_6a0bd12523cf43728ea87eab39f83564~mv2.png | alt=rocket-launch-light.png
+### 담당자 배정
+##### 귀사의 비즈니스를 누구보다 잘 아는 담당자가 배정됩니다. 이메일·채팅·전화 등 편한 채널로 언제든지 문의하세요.
+IMG: 62e435_f0f08677e4564e31bbc8e000d0824eac~mv2.png | alt=lego-light.png
+### 맞춤형 부가 서비스
+##### 라벨링, 번들 포장 등 고객사의 특성에 맞춘 유연한 작업을 지원합니다.
+# FAQ
+BTN: 전체 FAQ보기 -> /ko/3pl-fulfillment-faq
+### 3PL Fulfillment는 어떤 서비스인가요?
+3PL(Third-Party Logistics) Fulfillment는 재고 보관, 주문 처리(피킹/패킹), 배송, 반품 관리를 전문 물류 회사가 대신 운영하는 서비스입니다.
+COSHIP은 국제 운송부터 캐나다 현지 풀필먼트까지 통합 지원합니다.
+### 서비스 이용을 위한 필수 준비 사항은 무엇인가요?
+판매 채널, 제품 정보(크기/무게), 월 예상 물량을 공유해주시면 됩니다.
+복잡한 개발 없이 계정 공유 방식으로 빠르게 온보딩이 가능합니다.
+### 최소 물량 조건이 있나요?
+물량 조건은 제품 유형과 운영 방식에 따라 달라질 수 있습니다.
+월 예상 주문량과 입고 물량을 공유해주시면 운영 가능 여부와 견적을 안내드립니다.
+IMG: 11062b_26bc93db36be4ff98563820e9196975c~mv2.jpeg
+### 귀국이사 일정, 통관 기준, 비용이 궁금하신가요?
+CTA: 상담 문의하기
+
+=== /ko/3pl-fulfillment-faq
+TITLE: 3PL 풀필먼트 FAQ | 물류대행 안내 | COSHIP
+DESC: 캐나다 현지 창고 보관, 재고 관리, B2B 납품 등 3PL 풀필먼트 서비스 도입 및 운영 방식에 관한 FAQ입니다.
+BTN: FAQ 카테고리 -> /ko/faq
+# 3PL 풀필먼트 FAQ
+##### 창고 보관, 재고 관리 및 주문 처리 원스톱 서비스
+### 3PL Fulfillment는 어떤 서비스인가요?
+3PL(Third-Party Logistics) Fulfillment는 재고 보관, 주문 처리(피킹/패킹), 배송, 반품 관리를 전문 물류 회사가 대신 운영하는 서비스입니다.
+COSHIP은 국제 운송부터 캐나다 현지 풀필먼트까지 통합 지원합니다.
+### COSHIP 3PL과 일반 3PL의 차별점은 무엇인가요?
+COSHIP은 CBSA 인증 보세창고를 직접 운영합니다.
+일반 3PL의 경우 통관 후 별도의 창고로 이동하는 과정이 필요할 수 있지만, COSHIP은 자사 보세창고에서 통관과 보관이 이루어져 바로 출고 준비가 가능합니다.
+이를 통해 불필요한 이송, 지연 및 추가 비용을 줄일 수 있습니다.
+### 최소 물량 조건이 있나요?
+물량 조건은 제품 유형과 운영 방식에 따라 달라질 수 있습니다.
+월 예상 주문량과 입고 물량을 공유해주시면 운영 가능 여부와 견적을 안내드립니다.
+### 서비스 이용을 위한 필수 준비 사항은 무엇인가요?
+판매 채널, 제품 정보(크기/무게), 월 예상 물량을 공유해주시면 됩니다.
+복잡한 개발 없이 계정 공유 방식으로 빠르게 온보딩이 가능합니다.
+### 견적은 어떻게 요청하나요?
+웹사이트의 견적 요청 양식을 통해 판매 채널, 제품 정보, 월 예상 물량을 공유해 주시면 담당자가 확인 후 안내드립니다.
+IMG: 62e435_24917eba2eb24e8fa224686ff3df2274~mv2.png | alt=블로그 169 썸네일 (23).png
+### 최적의 풀필먼트 파트너를 찾고 계신가요?
+###### 취급 제품과 보관 규모, 월 주문량을 알려주시면 고객님께 꼭 맞는 맞춤형 물류 시스템을 제안해 드립니다.
+BTN: 문의하기 -> /ko/contact
+
+=== /ko/faq
+TITLE: 고객센터 FAQ | 캐나다쉬핑 종합 물류 서비스
+DESC: 해외이사, 차량운송, 택배, 3PL 등 캐나다쉬핑 종합 물류 서비스에 대한 자주 묻는 질문(FAQ)을 종합적으로 안내해 드립니다.
+# FAQ
+##### 서비스 카테고리를 선택하여 필요한 답변을 빠르게 확인해 보세요.
+#### 카테고리 선택
+CARD: 해외이사 FAQ -> /ko/international-moving-faq | IMG: 62e435_b0f8f35417f24d19953571eeafbbec70~mv2.png | alt=airplane-tilt-light.png
+CARD: 차량운송 FAQ -> /ko/vehicle-transport-faq | IMG: 62e435_dbe78c5d786f43b68e316c162c110a22~mv2.png | alt=car-light.png
+CARD: 타주이사 FAQ -> /ko/interprovincial-moving-faq | IMG: 62e435_810714f0aec8437da8d871e5519d1f7a~mv2.png | alt=house-line-light (3).png
+CARD: 택배 FAQ -> /ko/courier-faq | IMG: 62e435_76d7cb9aef444e71b6c2112311a65230~mv2.png | alt=package-light (3).png
+CARD: NRI 서비스 FAQ -> /ko/nri-services-faq | IMG: 62e435_ff9bd82fcf304be6b8b466f270292cce~mv2.png | alt=user-gear-light.png
+CARD: 상업화물 FAQ -> /ko/freight-forwarding-faq | IMG: 62e435_fc427f2f5c72450cb982f4f28a07cd97~mv2.png | alt=boat-light (3).png
+CARD: 3PL FAQ -> /ko/3pl-fulfillment-faq | IMG: 62e435_241508946e8e467e9919bacd85a75132~mv2.png | alt=warehouse-light (2).png
+
+=== /ko/tracking
+TITLE: 화물 배송조회 (Tracking) | 캐나다쉬핑 COSHIP
+DESC: 캐나다쉬핑을 통해 운송 중인 화물, 해외이사, 국제택배, 차량의 실시간 배송 현황과 위치를 간편하게 조회하실 수 있습니다.
+IMG: 62e435_a35cd7c27dd64f64ba8025e9fc872c34~mv2.jpeg
+# 배송조회하기
+###### 2007년부터 한국-캐나다 운송을 전문으로 해온 캐나다 운송 대표, 캐나다쉬핑
+BTN: 조회 -> (tracking form submit)
+IMG: 62e435_f465d24f8ce24a84ab6d23a92f2b35c1~mv2.png
+##### Canada-Korea・Since 2007
+BTN: 해외이사 -> /ko/international-moving
+BTN: 차량운송 -> /ko/vehicle-transport
+BTN: 상업화물 -> /ko/freight-forwarding
+BTN: 택배 -> /ko/courier-ecommerce
+EMBED: tracking
+
+=== /ko/contact
+TITLE: 고객센터 및 견적 문의 | 캐나다쉬핑 COSHIP
+DESC: 밴쿠버, 토론토, 한국 직영 캐나다쉬핑에 문의하세요. 해외이사, 차량운송, 상업화물 등 맞춤형 물류 견적과 상담을 제공합니다.
+IMG: 62e435_b150d79ce5bf44d7ab9b1534e06ac683~mv2.png
+# 문의하기
+##### 해외이사 및 물류 운송에 대한 문의사항이 있으신가요? 무엇이든 편하게 물어보세요.
+CONTACTCARD: WhatsApp | 왓츠앱 상담하기 | https://wa.me/message/X2NS4VQLBGBLD1 | IMG: 62e435_6c9d090b70444a5f874ade2070a9cbe0~mv2.png
+CONTACTCARD: Kakao Talk | 카톡 상담하기 | https://pf.kakao.com/_dLNBd | IMG: 62e435_49f19ee64a124081bc8940608e46bcde~mv2.png
+CONTACTCARD: Email | sales@coship.ca | mailto:van@coship.ca
+## 문의하실 서비스를 선택해주세요
+IMG: 62e435_fdb2fb4792214f6ab6dc4efe62536d48~mv2.png | alt=truck-light (1).png
+해외이사
+CTA: 캐나다 도착
+CTA: 캐나다 출발
+CTA: 한국에서 캐나다로
+CTA: 캐나다에서 한국으로
+IMG: 62e435_dbe78c5d786f43b68e316c162c110a22~mv2.png
+차량운송
+CTA: 한국에서 캐나다로
+CTA: 캐나다에서 한국으로
+IMG: 62e435_379899a473ee4e4cb0c5dc87202a7034~mv2.png | alt=basket-light.png
+이커머스
+CTA: 한국에서 캐나다로
+CTA: 캐나다에서 한국으로
+CTA: 택배 (국제 / 캐나다 국내)
+CTA: 타주이사
+CTA: 상업화물
+CTA: NRI 서비스
+CTA: 3PL 풀필먼트
+## 상담 문의하기
+FORM: general-inquiry
+CONSENT: 개인정보 수집 및 이용에 동의합니다. (필수)* -> /ko/privacypolicy
+#### 오시는 길
+LOCATIONS:
+
+=== /ko/partner-tracking
+TITLE: Tracking | COSHIP
+DESC:
+NOTE: partner-facing tracking page (Canada Post link); keep as hidden page, not in nav
+IMG: 62e435_a35cd7c27dd64f64ba8025e9fc872c34~mv2.jpeg
+# 배송조회하기
+###### 2007년부터 한국-캐나다 운송을 전문으로 해온 캐나다 운송 대표, 캐나다쉬핑
+BTN: 조회 -> (tracking form submit)
+IMG: 62e435_f465d24f8ce24a84ab6d23a92f2b35c1~mv2.png
+##### Canada-Korea・Since 2007
+BTN: 해외이사 -> /ko/international-moving
+BTN: 상업화물 -> /ko/freight-forwarding
+BTN: 차량운송 -> /ko/vehicle-transport
+BTN: 택배 -> /ko/courier-ecommerce
+IMG: 62e435_431e19b494be4441a8ac037f7d28f8b4~mv2.png | alt=캐나다포스트.png
+#### 캐나다 현지 배송
+BTN: 캐나다포스트 배송조회 -> https://www.canadapost-postescanada.ca/track-reperage/en/home
+EMBED: tracking

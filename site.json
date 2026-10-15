@@ -1,0 +1,167 @@
+{
+  "siteUrl": "https://www.coship.ca",
+  "contactEmail": "sales@coship.ca",
+  "formEndpoint": "",
+  "trackingApi": "https://bms.coship.ca/tracking/",
+  "logo": "39baec_680eddc2865b437bb7698464a301d1a3~mv2.png",
+  "favicon": "62e435_e5b725a67f27497a8f252c4a9700dbfe~mv2.png",
+  "social": {
+    "instagram": "https://www.instagram.com/canadashipping_/",
+    "youtube": "https://www.youtube.com/@coship1000",
+    "whatsapp": "https://wa.me/message/X2NS4VQLBGBLD1",
+    "kakao": "https://pf.kakao.com/_dLNBd"
+  },
+  "embeds": {
+    "tracking-result": { "en": "tracking-result.en.html", "ko": "tracking-result.ko.html", "remote": { "en": "62e435_b3690fa627b728cf86d72263c62383cf", "ko": "62e435_e3baabc76ce7d91e5df3d5fa7537dd77" } },
+    "calc-ca-to-kr": { "en": "calc-ca-to-kr.en.html", "ko": "calc-ca-to-kr.ko.html", "remote": { "en": "62e435_383f1d9c3d06f57870319550fb1f1030", "ko": "62e435_35d7e8d98fc576ad879537d8789c09fb" } },
+    "calc-kr-to-ca": { "en": "calc-kr-to-ca.en.html", "ko": "calc-kr-to-ca.ko.html", "remote": { "en": "62e435_ac498becf8c1de3d57b1e0e2009de3b5", "ko": "62e435_3fc6c29d491c28f9dff683e161c3f9bb" } }
+  },
+  "locations": [
+    { "key": "hq", "map": "1501 Hartley Ave, Coquitlam, BC V3K 6Z7, Canada", "phone": "1-604-455-1000", "tel": "+1-604-455-1000",
+      "en": { "name": "COSHIP Vancouver HQ", "addr": "1501 Hartley Ave, Coquitlam, BC V3K 6Z7", "hours": ["Mon.–Fri. 8am ~ 5pm (PST)"], "extra": "Internet Phone 070-7525-7791/2" },
+      "ko": { "name": "캐나다쉬핑 밴쿠버 본사", "addr": "1501 Hartley Ave, Coquitlam, BC V3K 6Z7", "hours": ["월–금 8am ~ 5pm (PST)"], "extra": "인터넷 전화번호 070-7525-7791/2" } },
+    { "key": "burnaby", "map": "4501 North Rd, Burnaby, BC V3N 4J5, Canada", "phone": "1-604-455-1000", "tel": "+1-604-455-1000",
+      "en": { "name": "COSHIP Burnaby", "addr": "#219-4501 North Rd Room 205, Burnaby, BC V3N 4J5", "hours": ["Mon–Tue, Thu–Sat 10:00am ~ 5:30pm (PST)", "Closed Wed & Sun"] },
+      "ko": { "name": "캐나다쉬핑 버나비 택배방", "addr": "#219-4501 North Rd Room 205, Burnaby, BC V3N 4J5", "hours": ["월·화·목·금·토 10am ~ 5:30pm (PST)"] } },
+    { "key": "kr", "map": "경기도 고양시 일산동구 고봉로678번길 146", "phone": "02-2043-5000", "tel": "+82-2-2043-5000", "link": "https://place.map.kakao.com/1357991057",
+      "en": { "name": "COSHIP Korea (캐나다쉬핑)", "addr": "146, Gobong-ro 678beon-gil, Ilsandong-gu, Goyang-si, Gyeonggi-do, Korea", "hours": ["Mon.–Fri. 8am ~ 5pm (KST)"] },
+      "ko": { "name": "캐나다쉬핑 한국 지사", "addr": "경기도 고양시 일산동구 고봉로678번길 146", "hours": ["월–금 8am ~ 5pm"] } },
+    { "key": "toronto", "map": "355 Admiral Blvd, Mississauga, ON L5T 2M8, Canada", "phone": "647-380-1000", "tel": "+1-647-380-1000",
+      "en": { "name": "COSHIP Toronto", "addr": "#4 - 355 Admiral Blvd, Mississauga, Ontario L5T 2M8", "hours": ["Mon.–Fri. 9am ~ 6pm (EST)"] },
+      "ko": { "name": "캐나다쉬핑 토론토 지사", "addr": "#4 - 355 Admiral Blvd, Mississauga, Ontario L5T 2M8", "hours": ["월–금 9am ~ 6pm (EST)"] } }
+  ],
+  "en": {
+    "lang": "en", "htmlLang": "en-CA", "prefix": "", "other": "ko", "otherLabel": "한국어",
+    "nav": [
+      { "t": "About", "h": "/about" },
+      { "t": "Services", "c": [
+        { "t": "International Moving", "h": "/international-moving", "c": [
+          { "t": "Korea ↔ Canada", "h": "/international-moving-ko-ca" },
+          { "t": "Moving From Canada", "h": "/moving-from-canada" },
+          { "t": "Moving To Canada", "h": "/moving-to-canada" } ] },
+        { "t": "Vehicle Transport", "h": "/vehicle-transport", "c": [
+          { "t": "Korea to Canada", "h": "/vehicle-transport-korea-to-canada" },
+          { "t": "Canada to Korea", "h": "/vehicle-transport-canada-to-korea" } ] },
+        { "t": "Interprovincial Moving", "h": "/interprovincial-moving" },
+        { "t": "Courier", "h": "/courier-ecommerce", "c": [
+          { "t": "Korea to Canada", "h": "/courier-korea-to-canada" },
+          { "t": "Canada to Korea", "h": "/courier-ca-to-kr" },
+          { "t": "Within Canada", "h": "/courier-within-ca" } ] },
+        { "t": "Sell in Canada", "h": "/sell-in-canada", "c": [
+          { "t": "NRI Services", "h": "/sell-in-canada" },
+          { "t": "E-commerce Support", "h": "/e-commerce" } ] },
+        { "t": "Freight Forwarding", "h": "/freight-forwarding" },
+        { "t": "3PL Fulfillment", "h": "/3plfulfillment" } ] },
+      { "t": "FAQ", "h": "/faq" },
+      { "t": "Tracking", "h": "/tracking" },
+      { "t": "Contact", "h": "/contact" }
+    ],
+    "footerNote": "COSHIP is the unified brand name used by our offices in both Canada and Korea — Canada Orient Shipping Ltd. in Canada and Canada Shipping Co., Ltd. in Korea.",
+    "company": "COSHIP | ㈜캐나다쉬핑 | Canada Orient Shipping Ltd.",
+    "terms": "Terms & Conditions", "privacy": "Privacy Policy",
+    "ui": {
+      "menu": "Menu", "quote": "Request a Quote", "phone": "Phone", "address": "Address", "hours": "Hours", "map": "Map",
+      "locations": "Our Locations", "inquiry": "Inquiry",
+      "trackingPlaceholder": "Enter tracking number", "trackBtn": "Track", "trackNotFound": "No tracking information was found for this number. Please check the number and try again.", "trackError": "Unable to retrieve tracking information right now. Please try again later.", "trackEmpty": "Enter a tracking number.",
+      "f_name": "Name", "f_email": "Email", "f_phone": "Phone", "f_service": "Service", "f_message": "Message", "f_choose": "— Select a service —", "f_send": "Send Inquiry", "f_consent": "I agree to the collection and use of personal information (required)", "f_sent": "Thank you! Your inquiry has been sent.", "f_fail": "Sending failed. Please email us directly.", "f_mail": "Opening your email app…",
+      "select_service": "Select Service for Inquiry", "general_inquiry": "General Inquiry", "page404": "Page not found", "back": "Back to home"
+    },
+    "home": {
+      "title": "Canada Orient Shipping Ltd | shipping Canada to Korea",
+      "desc": "Direct Canada-Korea shipping, international moving, freight forwarding, and 3PL fulfillment. Trusted logistics by COSHIP.",
+      "hero": { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "Canada–Korea Direct Network", "sub": "Local Operations. Global Reach.", "cta": "Request a Quote" },
+      "servicesTitle": "Our Services",
+      "cards": [
+        { "t": "International Moving", "s": "Door-to-Door moving service from packing to setup.", "q": "Where are you moving?", "img": "62e435_810714f0aec8437da8d871e5519d1f7a~mv2.png", "h": "/international-moving", "b": [["Korea↔Canada Moving", "/international-moving-ko-ca"], ["Moving to Canada", "/moving-to-canada"], ["Moving from Canada", "/moving-from-canada"]] },
+        { "t": "Courier (International/Domestic)", "s": "Air and ocean Courier service for fast and secure delivery.", "q": "Where are you shipping?", "img": "62e435_76d7cb9aef444e71b6c2112311a65230~mv2.png", "h": "/courier-ecommerce", "b": [["Ship to Canada", "/courier-korea-to-canada"], ["Ship to Korea", "/courier-ca-to-kr"], ["Ship within Canada", "/courier-within-ca"]] },
+        { "t": "Freight Forwarding & 3PL", "s": "End-to-end logistics: freight, warehousing & fulfillment", "img": "62e435_fc427f2f5c72450cb982f4f28a07cd97~mv2.png", "h": "/freight-forwarding", "b": [["Freight Forwarding", "/freight-forwarding"], ["3PL Fulfillment", "/3plfulfillment"]] },
+        { "t": "Sell in Canada", "s": "NRI customs clearance and e-commerce logistics tailored for selling in Canada.", "img": "62e435_ff9bd82fcf304be6b8b466f270292cce~mv2.png", "h": "/sell-in-canada", "b": [["NRI Services", "/sell-in-canada"], ["E-commerce Support", "/e-commerce"]] },
+        { "t": "Vehicle Transport", "s": "Safe and reliable vehicle shipping between Korea and Canada.", "q": "Where are you shipping?", "img": "62e435_dbe78c5d786f43b68e316c162c110a22~mv2.png", "h": "/vehicle-transport", "b": [["Ship to Canada", "/vehicle-transport-korea-to-canada"], ["Ship to Korea", "/vehicle-transport-canada-to-korea"]] },
+        { "t": "Interprovincial Moving", "s": "Moving across Canada with care and efficiency.", "img": "62e435_fdb2fb4792214f6ab6dc4efe62536d48~mv2.png", "h": "/interprovincial-moving", "b": [] }
+      ],
+      "reviewsTitle": "What Our Customers Say", "rating": "4.9", "ratingNote": "Based on 200+ reviews", "reviewsImg": "62e435_5ea3ef3e4e4144f98fc618a3c04997bf~mv2.png", "reviewsLogo": "62e435_587017f8fd0d460793b1f1f988e9144c~mv2.png",
+      "reviewsLink": "https://www.google.com/maps/search/?api=1&query=Canada+Orient+Shipping+Coquitlam", "reviewsLinkText": "More Google reviews",
+      "reviews": [
+        ["Ocean Courier", "COSHIP was able to deliver to Newfoundland, even though it is a remote location. The team responded quickly to our questions, and we were very satisfied with both the service and the value."],
+        ["Vehicle Transport", "We were nervous about shipping our vehicle from Korea to Canada, but the team clearly guided us through the consultation and customs process. Our vehicle arrived safely without any issues."],
+        ["International Moving", "We used COSHIP for a family move from Korea to Vancouver. From packing to final setup after arrival, the entire process was smooth, well-organized, and handled with care."]
+      ],
+      "whyTitle": "Why COSHIP",
+      "stats": [["SINCE 2007", "Proven Logistics Experience"], ["80,000+", "Shipments Processed Annually"], ["200+", "Global Logistics Partners"]],
+      "features": [
+        ["62e435_7ece9e121df24ecd9140daa1780e50ee~mv2.png", "Direct Canada–Korea Operations", "Our teams in Canada and Korea work together directly to provide reliable service from origin to destination."],
+        ["62e435_241508946e8e467e9919bacd85a75132~mv2.png", "All Your Logistics in One Place", "From international shipping, customs clearance, warehousing, delivery, and 3PL—all the logistics services you need in one place."],
+        ["62e435_beb9d3c6be134896941f72b480082195~mv2.png", "From Our Warehouse to the World", "With our CBSA-certified bonded warehouse and global carrier network, we connect storage, handling, and outbound shipping efficiently."]
+      ],
+      "galleryKicker": "COSHIP IN ACTION", "galleryTitle": "See How COSHIP Works", "gallerySub": "From warehouse handling to delivery, see our real operations in action.",
+      "gallery": ["62e435_e4d621d7af914b609003d0396d37ec78~mv2.jpg", "62e435_915866c41cfe403b9a0a254184130a43~mv2.png", "62e435_6a0698dca1424faf8e4fa6ae03d360b8~mv2.jpg", "62e435_cbde4d46f17f4ef8a3983a8bfbaf8ecb~mv2.png", "62e435_244f5bcc3d1d41d0942789efd5392295~mv2.jpeg", "62e435_ac7a4569084b43f79488ab83f0d0a6b9~mv2.jpg", "62e435_3e7982259c6b4089b2580127133c6ab5~mv2.jpeg", "62e435_c3fc9b6646a2479aa85f321c1d4ce6af~mv2.jpg"]
+    }
+  },
+  "ko": {
+    "lang": "ko", "htmlLang": "ko-KR", "prefix": "/ko", "other": "en", "otherLabel": "English",
+    "nav": [
+      { "t": "회사소개", "h": "/ko/about" },
+      { "t": "서비스", "c": [
+        { "t": "해외이사", "h": "/ko/international-moving", "c": [
+          { "t": "한국↔캐나다 이사", "h": "/ko/international-moving-ko-ca" },
+          { "t": "캐나다 출발 해외이사", "h": "/ko/moving-from-canada" },
+          { "t": "캐나다 도착 해외이사", "h": "/ko/moving-to-canada" } ] },
+        { "t": "차량운송", "h": "/ko/vehicle-transport", "c": [
+          { "t": "한국에서 캐나다로", "h": "/ko/vehicle-transport-korea-to-canada" },
+          { "t": "캐나다에서 한국으로", "h": "/ko/vehicle-transport-canada-to-korea" } ] },
+        { "t": "타주이사", "h": "/ko/interprovincial-moving" },
+        { "t": "택배", "h": "/ko/courier-ecommerce", "c": [
+          { "t": "한국에서 캐나다로", "h": "/ko/courier-korea-to-canada" },
+          { "t": "캐나다에서 한국으로", "h": "/ko/courier-ca-to-kr" },
+          { "t": "캐나다 국내", "h": "/ko/courier-within-ca" } ] },
+        { "t": "캐나다 판매 지원", "h": "/ko/sell-in-canada", "c": [
+          { "t": "NRI 서비스", "h": "/ko/sell-in-canada" },
+          { "t": "이커머스 지원", "h": "/ko/e-commerce" } ] },
+        { "t": "상업화물", "h": "/ko/freight-forwarding" },
+        { "t": "3PL 풀필먼트", "h": "/ko/3plfulfillment" } ] },
+      { "t": "FAQ", "h": "/ko/faq" },
+      { "t": "배송조회", "h": "/ko/tracking" },
+      { "t": "문의하기", "h": "/ko/contact" }
+    ],
+    "footerNote": "COSHIP은 한국 법인 ㈜캐나다쉬핑과 캐나다 법인 Canada Orient Shipping Ltd.가 공동으로 사용하는 공식 통합 브랜드입니다.",
+    "company": "COSHIP | ㈜캐나다쉬핑 | Canada Orient Shipping Ltd.",
+    "terms": "이용약관", "privacy": "개인정보처리방침",
+    "ui": {
+      "menu": "메뉴", "quote": "견적 문의하기", "phone": "전화번호", "address": "주소", "hours": "운영시간", "map": "지도",
+      "locations": "오시는 길", "inquiry": "문의",
+      "trackingPlaceholder": "운송장 번호를 입력하세요", "trackBtn": "조회", "trackNotFound": "해당 번호의 배송 정보를 찾을 수 없습니다. 번호를 확인한 후 다시 시도해 주세요.", "trackError": "현재 배송 정보를 불러올 수 없습니다. 잠시 후 다시 시도해 주세요.", "trackEmpty": "운송장 번호를 입력하세요.",
+      "f_name": "이름", "f_email": "이메일", "f_phone": "전화번호", "f_service": "문의 서비스", "f_message": "문의 내용", "f_choose": "— 서비스를 선택하세요 —", "f_send": "문의 보내기", "f_consent": "개인정보 수집 및 이용에 동의합니다. (필수)", "f_sent": "문의가 접수되었습니다. 감사합니다!", "f_fail": "전송에 실패했습니다. 이메일로 직접 문의해 주세요.", "f_mail": "메일 앱을 여는 중…",
+      "select_service": "문의하실 서비스를 선택해주세요", "general_inquiry": "상담 문의하기", "page404": "페이지를 찾을 수 없습니다", "back": "홈으로"
+    },
+    "home": {
+      "title": "COSHIP 캐나다쉬핑 | 캐나다 해외이사 · 택배 · 상업화물",
+      "desc": "[한국·캐나다 직영] 신뢰할 수 있는 한국-캐나다 간 종합 물류 운송 서비스. 캐나다쉬핑은 해외이사, 귀국이사, 유학생 소량 택배, 차량운송 및 3PL 상업화물 맞춤형 솔루션을 제공합니다.",
+      "hero": { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "한국과 캐나다를 직접 연결합니다", "sub": "양국 직영으로 더 빠르고 정확하게", "cta": "견적 문의하기" },
+      "servicesTitle": "캐나다쉬핑 서비스",
+      "cards": [
+        { "t": "해외이사", "s": "Door-to-Door 믿을 수 있는 해외이사 서비스", "q": "어디로 이사하시나요?", "img": "62e435_810714f0aec8437da8d871e5519d1f7a~mv2.png", "h": "/ko/international-moving", "b": [["한국↔캐나다 이사", "/ko/international-moving-ko-ca"], ["한국으로 이사", "/ko/moving-to-canada"], ["캐나다로 이사", "/ko/moving-from-canada"]] },
+        { "t": "택배 (국제/캐나다 국내)", "s": "항공 및 선박 택배 서비스로 한국과 캐나다를 잇는 빠르고 안전한 배송", "q": "어디로 배송하시나요?", "img": "62e435_76d7cb9aef444e71b6c2112311a65230~mv2.png", "h": "/ko/courier-ecommerce", "b": [["캐나다로 배송", "/ko/courier-korea-to-canada"], ["한국으로 배송", "/ko/courier-ca-to-kr"], ["캐나다 내 배송", "/ko/courier-within-ca"]] },
+        { "t": "상업화물 & 3PL", "s": "항공·해상 국제 운송부터 보관, 픽&팩, 반품 처리까지 제공하는 원스톱 물류 솔루션", "img": "62e435_fc427f2f5c72450cb982f4f28a07cd97~mv2.png", "h": "/ko/freight-forwarding", "b": [["상업화물", "/ko/freight-forwarding"], ["3PL 풀필먼트", "/ko/3plfulfillment"]] },
+        { "t": "캐나다 판매 지원", "s": "캐나다 판매를 위한 맞춤형 NRI 통관 및 이커머스 물류 서비스", "img": "62e435_ff9bd82fcf304be6b8b466f270292cce~mv2.png", "h": "/ko/sell-in-canada", "b": [["NRI 서비스", "/ko/sell-in-canada"], ["이커머스 지원", "/ko/e-commerce"]] },
+        { "t": "차량운송", "s": "한국과 캐나다 간 안전하고 신뢰할 수 있는 차량운송", "q": "차량을 어디로 보내시나요?", "img": "62e435_dbe78c5d786f43b68e316c162c110a22~mv2.png", "h": "/ko/vehicle-transport", "b": [["캐나다로 운송", "/ko/vehicle-transport-korea-to-canada"], ["한국으로 운송", "/ko/vehicle-transport-canada-to-korea"]] },
+        { "t": "타주이사", "s": "캐나다 전역을 연결하는 편리하고 안전한 이사", "img": "62e435_fdb2fb4792214f6ab6dc4efe62536d48~mv2.png", "h": "/ko/interprovincial-moving", "b": [] }
+      ],
+      "reviewsTitle": "고객이 경험한 캐나다쉬핑", "rating": "4.9", "ratingNote": "200개 이상의 Google 리뷰 기준", "reviewsImg": "62e435_5ea3ef3e4e4144f98fc618a3c04997bf~mv2.png", "reviewsLogo": "62e435_587017f8fd0d460793b1f1f988e9144c~mv2.png",
+      "reviewsLink": "https://www.google.com/maps/search/?api=1&query=Canada+Orient+Shipping+Coquitlam", "reviewsLinkText": "구글 리뷰 더 보기",
+      "reviews": [
+        ["선박택배", "뉴펀들랜드처럼 캐나다 내에서도 외진 지역까지 배송이 가능해서 정말 편리했어요. 궁금한 점이 생길 때마다 빠르고 친절하게 답변해 주셨고, 가격과 서비스 모두 만족스러워 다음에도 이용하고 싶어요!"],
+        ["차량운송", "한국에서 캐나다로 차량을 보내는 일이라 걱정이 많았지만, 상담부터 통관까지 친절하고 자세하게 안내해 주셨어요. 차량도 문제없이 안전하게 도착했습니다! 차량운송을 고민하시는 분들께 추천드려요."],
+        ["해외이사", "가족의 한국에서 밴쿠버 이사를 준비하며 캐나다쉬핑을 이용했습니다. 포장부터 현지 도착 후 짐 정리까지 순조롭게 진행됐고, 안내와 마무리도 꼼꼼해 정말 만족스러웠습니다."]
+      ],
+      "whyTitle": "숫자로 보는 캐나다쉬핑",
+      "stats": [["SINCE 2007", "축적된 물류 경험"], ["80,000+", "연간 화물 처리 건수"], ["200+", "글로벌 물류 파트너"]],
+      "features": [
+        ["62e435_7ece9e121df24ecd9140daa1780e50ee~mv2.png", "캐나다-한국 직영 네트워크", "밴쿠버, 토론토, 한국의 현지 팀이 직접 협력해 출발지부터 도착지까지 일관된 서비스를 제공합니다."],
+        ["62e435_241508946e8e467e9919bacd85a75132~mv2.png", "복잡한 물류, COSHIP 하나로", "국제택배, 포워딩, 해외이사, 차량운송, 통관, 보관 및 3PL까지 필요한 물류 서비스를 한곳에서 이용할 수 있습니다."],
+        ["62e435_beb9d3c6be134896941f72b480082195~mv2.png", "자사 보세창고에서 전세계 어디든", "CBSA 인증 자사 보세창고와 글로벌 선박·항공 네트워크를 통해 보관부터 출고까지 빠르고 안전하게 연결합니다."]
+      ],
+      "galleryKicker": "COSHIP IN ACTION", "galleryTitle": "COSHIP 현장보기", "gallerySub": "창고, 포장, 배송까지 캐나다쉬핑의 현장 모습을 확인해보세요.",
+      "gallery": ["62e435_e4d621d7af914b609003d0396d37ec78~mv2.jpg", "62e435_915866c41cfe403b9a0a254184130a43~mv2.png", "62e435_6a0698dca1424faf8e4fa6ae03d360b8~mv2.jpg", "62e435_cbde4d46f17f4ef8a3983a8bfbaf8ecb~mv2.png", "62e435_244f5bcc3d1d41d0942789efd5392295~mv2.jpeg", "62e435_ac7a4569084b43f79488ab83f0d0a6b9~mv2.jpg", "62e435_3e7982259c6b4089b2580127133c6ab5~mv2.jpeg", "62e435_c3fc9b6646a2479aa85f321c1d4ce6af~mv2.jpg"]
+    }
+  }
+}
