@@ -224,21 +224,46 @@
   });
 })();
 
-/* gallery slider arrows (loops) */
+/* gallery slider: endless auto-scroll + arrows */
 (function () {
   var wrap = document.querySelector('.collage-wrap');
   if (!wrap) return;
-  var box = wrap.querySelector('.collage');
-  function step() { return Math.max(200, Math.round(box.clientWidth * 0.8)); }
-  function go(dir) {
-    var max = box.scrollWidth - box.clientWidth;
-    if (dir > 0 && box.scrollLeft >= max - 4) box.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (dir < 0 && box.scrollLeft <= 4) box.scrollTo({ left: max, behavior: 'smooth' });
-    else box.scrollBy({ left: dir * step(), behavior: 'smooth' });
+  var box = wrap.querySelector('.collage'), cycles = box.querySelectorAll('.cycle');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pos = 0, last = 0, paused = false, speed = 60, anim = null;
+  function cw() { return cycles.length > 1 ? cycles[1].offsetLeft - cycles[0].offsetLeft : box.scrollWidth; }
+  function norm() { var c = cw(); if (c > 0) { while (pos >= c) pos -= c; while (pos < 0) pos += c; } }
+  function tick(t) {
+    if (!last) last = t;
+    var dt = (t - last) / 1000; last = t;
+    if (!paused && !anim && !document.hidden && !document.body.classList.contains('lb-open')) {
+      pos += speed * Math.min(dt, 0.1); norm(); box.scrollLeft = pos;
+    }
+    requestAnimationFrame(tick);
   }
+  function glide(delta) {
+    var from = pos, start = null, dur = 500;
+    anim = true;
+    function f(t) {
+      if (start === null) start = t;
+      var p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3);
+      pos = from + delta * e; var c = cw(); var v = pos; if (c > 0) { v = ((pos % c) + c) % c; }
+      box.scrollLeft = v;
+      if (p < 1) requestAnimationFrame(f); else { pos = v; anim = null; }
+    }
+    requestAnimationFrame(f);
+  }
+  function go(dir) { if (anim) return; pos = box.scrollLeft; if (dir < 0 && pos < box.clientWidth) { pos += cw(); box.scrollLeft = pos; } glide(dir * Math.max(200, box.clientWidth * 0.5)); }
   wrap.querySelector('.cg-prev').addEventListener('click', function () { go(-1); });
   wrap.querySelector('.cg-next').addEventListener('click', function () { go(1); });
-  box.addEventListener('keydown', function (e) { if (e.target !== box) return; if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
+  wrap.addEventListener('mouseenter', function () { paused = true; });
+  wrap.addEventListener('mouseleave', function () { paused = false; pos = box.scrollLeft; });
+  wrap.addEventListener('focusin', function () { paused = true; });
+  wrap.addEventListener('focusout', function () { paused = false; pos = box.scrollLeft; });
+  wrap.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+  wrap.addEventListener('touchend', function () { setTimeout(function () { paused = false; pos = box.scrollLeft; }, 1500); });
+  box.addEventListener('scroll', function () { if (paused) pos = box.scrollLeft; }, { passive: true });
+  if (!reduce) requestAnimationFrame(tick);
 })();
 
 /* back-to-top button */

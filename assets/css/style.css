@@ -301,3 +301,15 @@ body.lb-open{overflow:hidden}
 .to-top:hover{background:var(--red-d)}
 body.lb-open .to-top{display:none}
 @media (max-width:640px){.to-top{right:14px;bottom:14px;width:44px;height:44px}}
+
+/* collage v2: widths follow the container like the original (large = 1/2, small = 1/4), endless slider */
+.wrap.wide{max-width:none;padding:0 max(20px,5.2vw)}
+.collage-wrap{container-type:inline-size}
+.collage{display:flex;gap:0;padding:0;margin-top:24px}
+.cycle{display:flex;flex:none}
+.cc{flex:none}
+.cc-big{width:max(50cqw,300px)}
+.cc-grid{width:max(50cqw,300px);grid-template-columns:1fr 1fr;grid-template-rows:310px 310px;gap:0}
+.ct{margin:5px;height:auto;border-radius:6px}
+.cc-big .ct{height:610px}
+@media (max-width:640px){.cc-grid{grid-template-rows:235px 235px}.cc-big .ct{height:460px}}

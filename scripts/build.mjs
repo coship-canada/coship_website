@@ -367,15 +367,11 @@ const COLLAGE = [
 ];
 // horizontal collage: one large tile, then a 2x2 block of small tiles, repeating (as on the original site)
 function collage() {
-  const N = COLLAGE.length, TOTAL = N * 3; // the original repeats the set so the slider loops
+  const N = COLLAGE.length;
   const tile = (k, big) => { const [u, t, d] = COLLAGE[k % N]; return `<figure class="ct${big ? ' big' : ''}" data-i="${k % N}"><img src="${imgSrc(u)}" alt="${esc(t)}" loading="lazy"><figcaption><strong>${esc(t)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</figcaption></figure>`; };
-  const cols = []; let i = 0, big = true;
-  while (i < TOTAL) {
-    if (big) { cols.push(`<div class="cc cc-big">${tile(i, true)}</div>`); i += 1; }
-    else { const n = Math.min(4, TOTAL - i); cols.push(`<div class="cc cc-grid">${Array.from({ length: n }, (_, k) => tile(i + k)).join('')}</div>`); i += n; }
-    big = !big;
-  }
-  return `<div class="collage-wrap"><button type="button" class="cg-nav cg-prev" aria-label="Previous">‹</button><div class="collage" tabindex="0" aria-label="Gallery">${cols.join('')}</div><button type="button" class="cg-nav cg-next" aria-label="Next">›</button></div>`;
+  // one cycle = N pairs of (1 large tile + 2x2 small tiles); the cycle is rendered twice so the slider can loop endlessly
+  const cycle = () => { let k = 0, out = ''; for (let p = 0; p < N; p++) { out += `<div class="cc cc-big">${tile(k, true)}</div>`; k += 1; out += `<div class="cc cc-grid">${[0, 1, 2, 3].map((x) => tile(k + x)).join('')}</div>`; k += 4; } return `<div class="cycle">${out}</div>`; };
+  return `<div class="collage-wrap"><button type="button" class="cg-nav cg-prev" aria-label="Previous">‹</button><div class="collage" tabindex="0" aria-label="Gallery">${cycle()}${cycle().replace(/ data-i=/g, ' data-d="1" data-i=')}</div><button type="button" class="cg-nav cg-next" aria-label="Next">›</button></div>`;
 }
 
 function homeBody(lang) {
@@ -405,7 +401,7 @@ ${H.slides.map((s, k) => `  <div class="slide${k === 0 ? ' on' : ''}" style="bac
   <div class="features">${H.features.map(([i, t, d]) => `<div><img class="icon" src="${imgSrc(i)}" alt="" loading="lazy"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
 </div></section>
 <section class="sec alt"><div class="wrap">
-  <p class="kicker">${esc(H.galleryKicker)}</p><h2>${esc(H.galleryTitle)}</h2><p class="center">${esc(H.gallerySub)}</p>
+  <p class="kicker">${esc(H.galleryKicker)}</p><h2>${esc(H.galleryTitle)}</h2><p class="center">${esc(H.gallerySub)}</p></div><div class="wrap wide">
   ${collage(H.gallery)}
 </div></section>
 <section class="sec"><div class="wrap"><h2>${esc(L.ui.locations)}</h2>${locationsHtml(lang)}</div></section>`;
