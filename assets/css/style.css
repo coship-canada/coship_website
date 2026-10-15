@@ -145,3 +145,5 @@ label.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}.check 
   .loc dl{grid-template-columns:76px 1fr}
   .locations{grid-template-columns:1fr}
 }
+.rating img{height:48px;width:auto;border-radius:6px}.rating img:last-child{height:28px}
+.foot-logo{height:36px;width:auto}

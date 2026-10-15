@@ -19,12 +19,26 @@ const has = (p) => fs.existsSync(path.join(ROOT, p));
 
 /* ---------- images / embeds ---------- */
 const usedImages = new Set();
+let ICONS = new Set();
+const placeholders = new Map(); // uri -> svg
+const HOTLINK = process.env.WIX_HOTLINK === '1';
+function hash(str) { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+function makePlaceholder(uri) {
+  const h = hash(uri) % 360;
+  if (uri === site.logo) return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48"><text x="0" y="36" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="36" fill="#c8102e">COSHIP</text></svg>`;
+  if (uri === site.favicon) return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#c8102e"/><text x="32" y="43" text-anchor="middle" font-family="Arial" font-weight="800" font-size="30" fill="#fff">C</text></svg>`;
+  if (ICONS.has(uri)) return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#fdecef" stroke="#c8102e" stroke-width="2"/><path d="M20 38l8-10 6 7 4-5 6 8z" fill="#c8102e"/><circle cx="25" cy="24" r="3" fill="#c8102e"/></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},18%,86%)"/><stop offset="1" stop-color="hsl(${(h + 40) % 360},22%,72%)"/></linearGradient></defs><rect width="800" height="600" fill="url(#g)"/><g fill="none" stroke="rgba(255,255,255,.85)" stroke-width="14" stroke-linejoin="round"><path d="M250 380l110-140 80 100 55-70 105 110z"/><circle cx="300" cy="230" r="28"/></g><text x="400" y="500" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="34" fill="rgba(255,255,255,.9)" letter-spacing="6">COSHIP</text></svg>`;
+}
 function imgName(uri) { return uri.replace('~mv2', ''); }
 function imgSrc(uri) {
   if (/^https?:/.test(uri)) return uri;
   usedImages.add(uri);
   const local = `assets/img/${imgName(uri)}`;
-  return has(local) ? `${BASE}/${local}` : `https://static.wixstatic.com/media/${uri}`;
+  if (has(local)) return `${BASE}/${local}`;
+  if (HOTLINK) return `https://static.wixstatic.com/media/${uri}`;
+  if (!placeholders.has(uri)) placeholders.set(uri, makePlaceholder(uri));
+  return `${BASE}/assets/placeholder/${imgName(uri).replace(/\.[a-z]+$/i, '')}.svg`;
 }
 function embedSrc(key, lang) {
   const e = site.embeds[key];
@@ -471,6 +485,7 @@ function main() {
   fs.mkdirSync(DIST, { recursive: true });
   const pages = loadPages();
   const icons = collectIcons(pages);
+  ICONS = icons;
   // pages that exist (for hreflang / lang switcher)
   const homeEn = { path: '/', lang: 'en', title: site.en.home.title, desc: site.en.home.desc, lines: [] };
   const homeKo = { path: '/ko', lang: 'ko', title: site.ko.home.title, desc: site.ko.home.desc, lines: [] };
@@ -504,6 +519,8 @@ function main() {
   copyDir(path.join(ROOT, 'embeds'), path.join(DIST, 'embeds'));
   for (const f of ['CNAME', 'robots.txt']) if (has(f)) fs.copyFileSync(path.join(ROOT, f), path.join(DIST, f));
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
+
+  for (const [uri, svg] of placeholders) write(`assets/placeholder/${imgName(uri).replace(/\.[a-z]+$/i, '')}.svg`, svg);
 
   // sitemap
   const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
