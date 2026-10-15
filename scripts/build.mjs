@@ -551,7 +551,7 @@ function main() {
 
   // 404
   const L = site.en;
-  fs.writeFileSync(path.join(DIST, '404.html'), layout({ lang: 'en', p: '/404', title: 'Page not found | COSHIP', desc: '', existing, body: `<section class="sec"><div class="wrap center"><h1>${L.ui.page404}</h1><p><a class="btn" href="${url('/')}">${L.ui.back}</a> <a class="btn ghost" href="${url('/ko')}">홈으로 (한국어)</a></p></div></section>`, extraHead: '<meta name="robots" content="noindex">' }));
+  fs.writeFileSync(path.join(DIST, '404.html'), layout({ lang: 'en', p: '/404', title: 'Page not found | COSHIP', desc: '', existing, body: `<section class="sec"><div class="wrap center"><h1>${L.ui.page404}</h1><p><a class="btn" href="${url('/')}">${L.ui.back}</a> <a class="btn ghost" href="${url('/ko')}">홈으로 (한국어)</a></p></div></section>`, extraHead: '<meta name="robots" content="noindex"><script>(function(){var m=location.pathname.match(/^(.*?\\/(?:ko\\/)?tracking)\\/([^\\/]+)\\/?$/);if(m)location.replace(m[1]+"/"+location.search+"#"+encodeURIComponent(decodeURIComponent(m[2])));})();</script>' }));
 
   // image manifest for the downloader
   const manifest = [...usedImages].filter((u) => !/^https?:/.test(u)).sort();

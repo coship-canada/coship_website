@@ -125,7 +125,15 @@
       history.replaceState(null, '', '#' + encodeURIComponent(no));
       lookup(no);
     });
-    var h = decodeURIComponent((location.hash || '').slice(1));
+    var h = '';
+    try {
+      var qp = new URLSearchParams(location.search);
+      ['no', 'bl', 'hawb', 'hawbno', 'tracking', 'trackingno', 'trackingnumber', 'number', 'num', 'q', 'id'].some(function (k) {
+        var hit = null; qp.forEach(function (v, key) { if (!hit && key.toLowerCase() === k && v) hit = v; });
+        if (hit) { h = hit.trim(); return true; }
+      });
+    } catch (e) {}
+    if (!h) h = decodeURIComponent((location.hash || '').slice(1));
     if (h) { document.getElementById('track-no').value = h; lookup(h); }
   }
 })();
