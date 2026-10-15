@@ -358,8 +358,9 @@ function homeBody(lang) {
       ${c.b.length ? `<div class="btn-row">${c.b.map(([t, h]) => `<a class="btn small" href="${url(h)}">${esc(t)}</a>`).join('')}</div>` : ''}
     </article>`).join('');
   return `
-<section class="hero" style="background-image:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('${imgSrc(H.hero.img)}')">
-  <div class="wrap"><h1>${esc(H.hero.h1)}</h1><p>${esc(H.hero.sub)}</p><a class="btn" href="${url(L.prefix + '/contact')}">${esc(H.hero.cta)}</a></div>
+<section class="hero-slider" aria-roledescription="carousel">
+${H.slides.map((s, k) => `  <div class="slide${k === 0 ? ' on' : ''}" style="background-image:linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.42)),url('${imgSrc(s.img)}')"><div class="wrap">${k === 0 ? '<h1>' : '<h2 class="h1">'}${esc(s.h1)}${k === 0 ? '</h1>' : '</h2>'}<p>${esc(s.sub)}</p><a class="btn" href="${url(L.prefix + '/contact')}">${esc(H.hero.cta)}</a></div></div>`).join('\n')}
+  <div class="dots">${H.slides.map((s, k) => `<button type="button" aria-label="Slide ${k + 1}"${k === 0 ? ' class="on"' : ''}></button>`).join('')}</div>
 </section>
 <section class="sec"><div class="wrap"><h2>${esc(H.servicesTitle)}</h2><div class="cards">${cards}</div></div></section>
 <section class="sec alt"><div class="wrap">

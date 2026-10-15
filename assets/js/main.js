@@ -129,3 +129,20 @@
     if (h) { document.getElementById('track-no').value = h; lookup(h); }
   }
 })();
+
+/* home hero slider */
+(function () {
+  var box = document.querySelector('.hero-slider');
+  if (!box) return;
+  var slides = box.querySelectorAll('.slide'), dots = box.querySelectorAll('.dots button'), i = 0, timer;
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+  }
+  function start() { clearInterval(timer); timer = setInterval(function () { show(i + 1); }, 5000); }
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); start(); }); });
+  box.addEventListener('mouseenter', function () { clearInterval(timer); });
+  box.addEventListener('mouseleave', start);
+  start();
+})();

@@ -71,6 +71,11 @@
       "title": "Canada Orient Shipping Ltd | shipping Canada to Korea",
       "desc": "Direct Canada-Korea shipping, international moving, freight forwarding, and 3PL fulfillment. Trusted logistics by COSHIP.",
       "hero": { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "Canada–Korea Direct Network", "sub": "Local Operations. Global Reach.", "cta": "Request a Quote" },
+      "slides": [
+        { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "Canada–Korea Direct Network", "sub": "Local Operations. Global Reach." },
+        { "img": "62e435_2d82381ddce248e492e213886f7ae4ef~mv2.png", "h1": "Courier • Freight Forwarding • International Moving • 3PL", "sub": "All Under One Roof" },
+        { "img": "62e435_6aadc068675e4b4cb08d45521872fa20~mv2.jpg", "h1": "CBSA Bonded Warehouse", "sub": "Packing • Fulfillment • Distribution" }
+      ],
       "servicesTitle": "Our Services",
       "cards": [
         { "t": "International Moving", "s": "Door-to-Door moving service from packing to setup.", "q": "Where are you moving?", "img": "62e435_810714f0aec8437da8d871e5519d1f7a~mv2.png", "h": "/international-moving", "b": [["Korea↔Canada Moving", "/international-moving-ko-ca"], ["Moving to Canada", "/moving-to-canada"], ["Moving from Canada", "/moving-from-canada"]] },
@@ -138,6 +143,11 @@
       "title": "COSHIP 캐나다쉬핑 | 캐나다 해외이사 · 택배 · 상업화물",
       "desc": "[한국·캐나다 직영] 신뢰할 수 있는 한국-캐나다 간 종합 물류 운송 서비스. 캐나다쉬핑은 해외이사, 귀국이사, 유학생 소량 택배, 차량운송 및 3PL 상업화물 맞춤형 솔루션을 제공합니다.",
       "hero": { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "한국과 캐나다를 직접 연결합니다", "sub": "양국 직영으로 더 빠르고 정확하게", "cta": "견적 문의하기" },
+      "slides": [
+        { "img": "62e435_f038fd486644471299efe85026357013~mv2.jpg", "h1": "한국과 캐나다를 직접 연결합니다", "sub": "양국 직영으로 더 빠르고 정확하게" },
+        { "img": "62e435_2d82381ddce248e492e213886f7ae4ef~mv2.png", "h1": "포워딩에서 택배, 해외이사, 차량운송, 3PL까지", "sub": "COSHIP에서 한번에" },
+        { "img": "62e435_6aadc068675e4b4cb08d45521872fa20~mv2.jpg", "h1": "자사 운영 CBSA 보세창고", "sub": "포장 · 풀필먼트 · 물류대행" }
+      ],
       "servicesTitle": "캐나다쉬핑 서비스",
       "cards": [
         { "t": "해외이사", "s": "Door-to-Door 믿을 수 있는 해외이사 서비스", "q": "어디로 이사하시나요?", "img": "62e435_810714f0aec8437da8d871e5519d1f7a~mv2.png", "h": "/ko/international-moving", "b": [["한국↔캐나다 이사", "/ko/international-moving-ko-ca"], ["한국으로 이사", "/ko/moving-to-canada"], ["캐나다로 이사", "/ko/moving-from-canada"]] },
