@@ -232,3 +232,23 @@ details.faq summary{font-size:19px}
 .contact-top{padding:0 0 56px}.contact-top .contact-cards{margin-top:-110px;position:relative}
 .contact-top .card{background:#fff}
 @media (max-width:640px){.contact-hero{min-height:360px;padding:50px 0 120px}.contact-top .contact-cards{margin-top:-90px}}
+
+/* tracking service card (matches original: beaver + 2x2 chips) */
+.track-card{gap:20px;padding:0 24px 0 0;overflow:hidden;align-items:center;min-height:218px}
+.track-card img{width:245px;height:auto;flex:none}
+.track-card>div{flex:1;padding:20px 0}
+.track-card .since{font-size:25px;font-weight:400;margin:0 0 16px;color:#222}
+.chip-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,60px);grid-auto-flow:column;gap:17px 34px}
+.chip-grid a{display:flex;align-items:center;justify-content:center;border:1px solid #c8c8c8;border-radius:20px;background:#fff;color:#eb1b23;font-size:20px;text-decoration:none}
+.chip-grid a:hover{border-color:var(--red);background:#fff5f6}
+@media (max-width:760px){.track-card{flex-direction:column;padding:0 20px 20px;text-align:center}.track-card img{width:200px}.chip-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}}
+
+/* home: service cards in 2 columns, larger type */
+.svc-cards{grid-template-columns:repeat(2,1fr);gap:28px}
+.svc-cards .card{padding:30px 36px}
+.svc-cards .card-img img{width:60px;height:60px}
+.svc-cards .card h3{font-size:30px;font-weight:500}
+.svc-cards .card p{font-size:20px}
+.svc-cards .card .q{font-size:20px}
+@media (max-width:760px){.svc-cards{grid-template-columns:1fr}.svc-cards .card h3{font-size:26px}}
+.sec h2:first-child{text-align:center}

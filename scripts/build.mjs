@@ -369,7 +369,7 @@ function homeBody(lang) {
 ${H.slides.map((s, k) => `  <div class="slide${k === 0 ? ' on' : ''}" style="background-image:linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.42)),url('${imgSrc(s.img)}')"><div class="wrap">${k === 0 ? '<h1>' : '<h2 class="h1">'}${esc(s.h1)}${k === 0 ? '</h1>' : '</h2>'}<p>${esc(s.sub)}</p><a class="btn" href="${url(L.prefix + '/contact')}">${esc(H.hero.cta)}</a></div></div>`).join('\n')}
   <div class="dots">${H.slides.map((s, k) => `<button type="button" aria-label="Slide ${k + 1}"${k === 0 ? ' class="on"' : ''}></button>`).join('')}</div>
 </section>
-<section class="sec"><div class="wrap"><h2>${esc(H.servicesTitle)}</h2><div class="cards">${cards}</div></div></section>
+<section class="sec"><div class="wrap"><h2>${esc(H.servicesTitle)}</h2><div class="cards svc-cards">${cards}</div></div></section>
 <section class="sec alt"><div class="wrap">
   <h2>${esc(H.reviewsTitle)}</h2>
   <div class="rating"><img src="${imgSrc(H.reviewsImg)}" alt="" height="48" loading="lazy"><strong>${esc(H.rating)}</strong><span>${esc(H.ratingNote)}</span><img src="${imgSrc(H.reviewsLogo)}" alt="Google" height="28" loading="lazy"></div>
@@ -468,7 +468,7 @@ function trackingBody(lang, partner) {
     <div>
       ${partner ? `<p>${ko ? '캐나다 현지 배송' : 'Final delivery by'} <a class="btn ghost small" href="https://www.canadapost-postescanada.ca/track-reperage/en/home" target="_blank" rel="noopener">${ko ? '캐나다포스트 배송조회' : 'Track with Canada Post'}</a></p>` : ''}
       <p class="since">Canada–Korea · Since 2007</p>
-      <div class="btn-row">${links.map(([t, h]) => `<a class="btn ghost small" href="${url(L.prefix + h)}">${esc(t)} ›</a>`).join('')}</div>
+      <div class="chip-grid">${links.map(([t, h]) => `<a href="${url(L.prefix + h)}">${esc(t)} ›</a>`).join('')}</div>
     </div>
   </div>
 </div></section>`;
