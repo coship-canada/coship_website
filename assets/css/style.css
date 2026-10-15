@@ -215,13 +215,20 @@ details.faq summary{font-size:19px}
 .loc-tab{font:inherit;font-weight:700;font-size:17px;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:12px 20px;cursor:pointer;color:var(--muted)}
 .loc-tab:hover{color:var(--red)}
 .loc-tab.on{color:var(--red);border-bottom-color:var(--red)}
-.loc{display:none;border:0;border-radius:0;overflow:visible;background:transparent;padding-top:24px}
-.loc.on{display:grid;grid-template-columns:minmax(260px,1fr) 1.4fr;gap:28px;align-items:start}
-.loc dl{padding:0;grid-template-columns:90px 1fr;font-size:17px}
-.loc .map{height:380px;border-radius:var(--radius)}
-@media (max-width:760px){.loc.on{grid-template-columns:1fr}.loc-tab{padding:10px 14px;font-size:15.5px}.loc .map{height:280px}}
+.loc-panel{display:none;padding-top:24px}
+.loc-panel.on{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:28px}
+.locations .loc{border:0;border-radius:0;overflow:visible;background:transparent}
+.locations .loc h3{padding:0 0 4px}
+.locations .loc dl{padding:8px 0 14px;grid-template-columns:90px 1fr;font-size:17px}
+.loc .map{height:340px;border-radius:var(--radius)}
+@media (max-width:760px){.loc-panel.on{grid-template-columns:1fr}.loc-tab{padding:10px 16px;font-size:16px}.loc .map{height:280px}}
 .contact-cards img{height:56px;width:auto;object-fit:contain}
 .features img,.feature img{width:56px;height:56px;object-fit:contain}
 .contact-cards .ccard{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px}
 .contact-cards .ccard h3{margin:.2em 0 0}.contact-cards .ccard p{margin:0}
 .mail-ico{height:56px;display:flex;align-items:center;font-size:40px;line-height:1}
+
+.contact-hero{min-height:500px;padding-bottom:140px;align-items:flex-start;padding-top:90px}
+.contact-top{padding:0 0 56px}.contact-top .contact-cards{margin-top:-110px;position:relative}
+.contact-top .card{background:#fff}
+@media (max-width:640px){.contact-hero{min-height:360px;padding:50px 0 120px}.contact-top .contact-cards{margin-top:-90px}}

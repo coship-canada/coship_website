@@ -150,14 +150,13 @@
 /* locations tabs */
 (function () {
   document.querySelectorAll('[data-tabs]').forEach(function (box) {
-    var tabs = box.querySelectorAll('.loc-tab'), panels = box.querySelectorAll('.loc');
+    var tabs = box.querySelectorAll('.loc-tab'), panels = box.querySelectorAll('.loc-panel');
     tabs.forEach(function (t, k) {
       t.addEventListener('click', function () {
         tabs.forEach(function (x, j) { x.classList.toggle('on', j === k); x.setAttribute('aria-selected', j === k); });
         panels.forEach(function (p, j) {
           p.classList.toggle('on', j === k);
-          var f = p.querySelector('iframe');
-          if (j === k && f && !f.getAttribute('src')) f.setAttribute('src', f.getAttribute('data-src'));
+          if (j === k) p.querySelectorAll('iframe').forEach(function (f) { if (!f.getAttribute('src')) f.setAttribute('src', f.getAttribute('data-src')); });
         });
       });
     });

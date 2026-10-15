@@ -332,12 +332,18 @@ ${body}
 
 /* ---------- custom templates ---------- */
 function locationsHtml(lang) {
-  const L = site[lang]; const ui = L.ui;
-  const tabs = site.locations.map((loc, k) => `<button type="button" role="tab" class="loc-tab${k === 0 ? ' on' : ''}" aria-selected="${k === 0}" data-i="${k}">${esc(loc[lang].name)}</button>`).join('');
-  const panels = site.locations.map((loc, k) => {
-    const d = loc[lang];
+  const L = site[lang]; const ui = L.ui; const ko = lang === 'ko';
+  const groups = [
+    [ko ? '밴쿠버' : 'Vancouver', ['hq', 'burnaby']],
+    [ko ? '토론토' : 'Toronto', ['toronto']],
+    [ko ? '한국' : 'Korea', ['kr']]
+  ];
+  const tabs = groups.map(([n], k) => `<button type="button" role="tab" class="loc-tab${k === 0 ? ' on' : ''}" aria-selected="${k === 0}">${esc(n)}</button>`).join('');
+  const panels = groups.map(([, keys], k) => `<div class="loc-panel${k === 0 ? ' on' : ''}" role="tabpanel">${keys.map((key) => {
+    const loc = site.locations.find((x) => x.key === key); const d = loc[lang];
     const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(loc.map)}&output=embed`;
-    return `<article class="loc${k === 0 ? ' on' : ''}" role="tabpanel">
+    return `<article class="loc">
+      <h3>${esc(d.name)}</h3>
       <dl>
         <dt>${esc(ui.phone)}</dt><dd><a href="tel:${loc.tel}">${esc(loc.phone)}</a>${d.extra ? `<br><span class="muted">${esc(d.extra)}</span>` : ''}</dd>
         <dt>${esc(ui.address)}</dt><dd>${loc.link ? `<a href="${loc.link}" target="_blank" rel="noopener">${esc(d.addr)}</a>` : esc(d.addr)}</dd>
@@ -345,7 +351,7 @@ function locationsHtml(lang) {
       </dl>
       <iframe class="map" title="${esc(d.name)}" ${k === 0 ? `src="${mapUrl}"` : ''} data-src="${mapUrl}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </article>`;
-  }).join('');
+  }).join('')}</div>`).join('');
   return `<div class="locations" data-tabs><div class="loc-tabs" role="tablist">${tabs}</div>${panels}</div>`;
 }
 
@@ -420,10 +426,11 @@ function contactBody(lang) {
     ['Email', site.contactEmail, 'mailto:' + site.contactEmail, null]
   ];
   return `
-<section class="banner"><img src="${imgSrc('62e435_b150d79ce5bf44d7ab9b1534e06ac683~mv2.png')}" alt=""></section>
-<section class="sec"><div class="wrap">
+<section class="track-hero contact-hero" style="background-image:url('${imgSrc('62e435_b150d79ce5bf44d7ab9b1534e06ac683~mv2.png')}')"><div class="wrap"><div class="track-hero-in">
   <h1>${ko ? '문의하기' : 'Contact Us'}</h1>
   <p class="lead">${ko ? '해외이사 및 물류 운송에 대한 문의사항이 있으신가요? 무엇이든 편하게 물어보세요.' : 'Questions about shipping or logistics? We\'re here to help.'}</p>
+</div></div></section>
+<section class="contact-top"><div class="wrap">
   <div class="contact-cards">${cards.map(([t, sub, h, im]) => `<a class="card ccard" href="${h}" ${h.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${im ? `<img src="${imgSrc(im)}" alt="" height="48">` : '<span class="mail-ico" aria-hidden="true">✉</span>'}<h3>${t}</h3><p>${esc(sub)}</p></a>`).join('')}</div>
 </div></section>
 <section class="sec alt"><div class="wrap">
