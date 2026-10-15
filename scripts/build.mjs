@@ -507,17 +507,19 @@ function main() {
     else if (bare === '/partner-tracking') body = trackingBody(lang, true);
     else if (bare === '/faq') body = faqIndexBody(lang);
     else body = renderGeneric(pg, ctx);
-    const noindex = bare === '/partner-tracking';
+    const noindex = bare === '/partner-tracking' || site.noindex === true;
     const html = layout({ lang, p: pg.path, title: pg.title, desc: pg.desc, body, existing, extraHead: noindex ? '<meta name="robots" content="noindex">' : '' });
     const rel = pg.path === '/' ? 'index.html' : path.join(pg.path.replace(/^\//, ''), 'index.html');
     write(rel, html);
-    if (!noindex) urls.push(pg.path);
+    if (bare !== '/partner-tracking' && site.noindex !== true) urls.push(pg.path);
   }
 
   // static assets
   copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   copyDir(path.join(ROOT, 'embeds'), path.join(DIST, 'embeds'));
   for (const f of ['CNAME', 'robots.txt']) if (has(f)) fs.copyFileSync(path.join(ROOT, f), path.join(DIST, f));
+  // preview mode: block all crawlers (set "noindex": false in site.json at launch)
+  if (site.noindex === true) fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
   for (const [uri, svg] of placeholders) write(`assets/placeholder/${imgName(uri).replace(/\.[a-z]+$/i, '')}.svg`, svg);

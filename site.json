@@ -1,5 +1,6 @@
 {
   "siteUrl": "https://www.coship.ca",
+  "noindex": true,
   "contactEmail": "sales@coship.ca",
   "formEndpoint": "",
   "trackingApi": "https://bms.coship.ca/tracking/",
