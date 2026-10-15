@@ -333,19 +333,20 @@ ${body}
 /* ---------- custom templates ---------- */
 function locationsHtml(lang) {
   const L = site[lang]; const ui = L.ui;
-  return `<div class="locations">${site.locations.map((loc) => {
+  const tabs = site.locations.map((loc, k) => `<button type="button" role="tab" class="loc-tab${k === 0 ? ' on' : ''}" aria-selected="${k === 0}" data-i="${k}">${esc(loc[lang].name)}</button>`).join('');
+  const panels = site.locations.map((loc, k) => {
     const d = loc[lang];
     const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(loc.map)}&output=embed`;
-    return `<article class="loc">
-      <h3>${esc(d.name)}</h3>
+    return `<article class="loc${k === 0 ? ' on' : ''}" role="tabpanel">
       <dl>
         <dt>${esc(ui.phone)}</dt><dd><a href="tel:${loc.tel}">${esc(loc.phone)}</a>${d.extra ? `<br><span class="muted">${esc(d.extra)}</span>` : ''}</dd>
         <dt>${esc(ui.address)}</dt><dd>${loc.link ? `<a href="${loc.link}" target="_blank" rel="noopener">${esc(d.addr)}</a>` : esc(d.addr)}</dd>
         <dt>${esc(ui.hours)}</dt><dd>${d.hours.map(esc).join('<br>')}</dd>
       </dl>
-      <iframe class="map" title="${esc(d.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${mapUrl}"></iframe>
+      <iframe class="map" title="${esc(d.name)}" ${k === 0 ? `src="${mapUrl}"` : ''} data-src="${mapUrl}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </article>`;
-  }).join('')}</div>`;
+  }).join('');
+  return `<div class="locations" data-tabs><div class="loc-tabs" role="tablist">${tabs}</div>${panels}</div>`;
 }
 
 function homeBody(lang) {

@@ -208,3 +208,15 @@ details.faq summary{font-size:19px}
   .hero-slider,.hero-slider .slide.on{min-height:520px}
   .track-hero{min-height:420px}
 }
+
+/* locations as tabs */
+.locations{display:block;margin-top:20px}
+.loc-tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:2px solid var(--line);margin-bottom:0}
+.loc-tab{font:inherit;font-weight:700;font-size:17px;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:12px 20px;cursor:pointer;color:var(--muted)}
+.loc-tab:hover{color:var(--red)}
+.loc-tab.on{color:var(--red);border-bottom-color:var(--red)}
+.loc{display:none;border:0;border-radius:0;overflow:visible;background:transparent;padding-top:24px}
+.loc.on{display:grid;grid-template-columns:minmax(260px,1fr) 1.4fr;gap:28px;align-items:start}
+.loc dl{padding:0;grid-template-columns:90px 1fr;font-size:17px}
+.loc .map{height:380px;border-radius:var(--radius)}
+@media (max-width:760px){.loc.on{grid-template-columns:1fr}.loc-tab{padding:10px 14px;font-size:15.5px}.loc .map{height:280px}}
