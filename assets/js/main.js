@@ -175,7 +175,8 @@
 (function () {
   var box = document.querySelector('.collage');
   if (!box) return;
-  var tiles = Array.prototype.slice.call(box.querySelectorAll('.ct')), cur = 0, lb;
+  var all = Array.prototype.slice.call(box.querySelectorAll('.ct')), tiles = [], seenI = {}, cur = 0, lb;
+  all.forEach(function (t) { var k = t.getAttribute('data-i'); if (!seenI[k]) { seenI[k] = 1; tiles.push(t); } });
   function build() {
     lb = document.createElement('div');
     lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.hidden = true;
@@ -209,7 +210,8 @@
     try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) {}
     lb.hidden = true; document.body.classList.remove('lb-open');
   }
-  tiles.forEach(function (t, k) {
+  all.forEach(function (t) {
+    var k = parseInt(t.getAttribute('data-i'), 10);
     t.setAttribute('tabindex', '0'); t.setAttribute('role', 'button');
     t.addEventListener('click', function () { open(k); });
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(k); } });
@@ -220,4 +222,21 @@
     else if (e.key === 'ArrowRight') show(cur + 1);
     else if (e.key === 'ArrowLeft') show(cur - 1);
   });
+})();
+
+/* gallery slider arrows (loops) */
+(function () {
+  var wrap = document.querySelector('.collage-wrap');
+  if (!wrap) return;
+  var box = wrap.querySelector('.collage');
+  function step() { return Math.max(200, Math.round(box.clientWidth * 0.8)); }
+  function go(dir) {
+    var max = box.scrollWidth - box.clientWidth;
+    if (dir > 0 && box.scrollLeft >= max - 4) box.scrollTo({ left: 0, behavior: 'smooth' });
+    else if (dir < 0 && box.scrollLeft <= 4) box.scrollTo({ left: max, behavior: 'smooth' });
+    else box.scrollBy({ left: dir * step(), behavior: 'smooth' });
+  }
+  wrap.querySelector('.cg-prev').addEventListener('click', function () { go(-1); });
+  wrap.querySelector('.cg-next').addEventListener('click', function () { go(1); });
+  box.addEventListener('keydown', function (e) { if (e.target !== box) return; if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
 })();

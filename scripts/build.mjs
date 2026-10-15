@@ -367,14 +367,15 @@ const COLLAGE = [
 ];
 // horizontal collage: one large tile, then a 2x2 block of small tiles, repeating (as on the original site)
 function collage() {
-  const tile = ([u, t, d], big) => `<figure class="ct${big ? ' big' : ''}"><img src="${imgSrc(u)}" alt="${esc(t)}" loading="lazy"><figcaption><strong>${esc(t)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</figcaption></figure>`;
+  const N = COLLAGE.length, TOTAL = N * 3; // the original repeats the set so the slider loops
+  const tile = (k, big) => { const [u, t, d] = COLLAGE[k % N]; return `<figure class="ct${big ? ' big' : ''}" data-i="${k % N}"><img src="${imgSrc(u)}" alt="${esc(t)}" loading="lazy"><figcaption><strong>${esc(t)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</figcaption></figure>`; };
   const cols = []; let i = 0, big = true;
-  while (i < COLLAGE.length) {
-    if (big) { cols.push(`<div class="cc cc-big">${tile(COLLAGE[i], true)}</div>`); i += 1; }
-    else { cols.push(`<div class="cc cc-grid">${COLLAGE.slice(i, i + 4).map((x) => tile(x)).join('')}</div>`); i += 4; }
+  while (i < TOTAL) {
+    if (big) { cols.push(`<div class="cc cc-big">${tile(i, true)}</div>`); i += 1; }
+    else { const n = Math.min(4, TOTAL - i); cols.push(`<div class="cc cc-grid">${Array.from({ length: n }, (_, k) => tile(i + k)).join('')}</div>`); i += n; }
     big = !big;
   }
-  return `<div class="collage" tabindex="0" aria-label="Gallery">${cols.join('')}</div>`;
+  return `<div class="collage-wrap"><button type="button" class="cg-nav cg-prev" aria-label="Previous">‹</button><div class="collage" tabindex="0" aria-label="Gallery">${cols.join('')}</div><button type="button" class="cg-nav cg-next" aria-label="Next">›</button></div>`;
 }
 
 function homeBody(lang) {

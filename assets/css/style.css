@@ -254,7 +254,7 @@ details.faq summary{font-size:19px}
 .sec h2:first-child{text-align:center}
 
 /* horizontal collage gallery (home) */
-.collage{display:flex;gap:10px;overflow-x:auto;padding:4px 0 14px;margin-top:24px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.collage{display:flex;gap:10px;overflow-x:auto;padding:4px 0 14px;margin-top:24px;-webkit-overflow-scrolling:touch}
 .cc{flex:none;scroll-snap-align:start}
 .cc-big{width:390px}.cc-grid{width:400px;display:grid;grid-template-columns:195px 195px;grid-template-rows:310px 310px;gap:10px}
 .ct{position:relative;margin:0;overflow:hidden;border-radius:4px;background:#222;height:100%}
@@ -287,3 +287,10 @@ body.lb-open{overflow:hidden}
 .lb-nav:hover{opacity:1;color:var(--red)}
 .lb-prev{left:10px}.lb-next{right:10px}
 @media (max-width:760px){.lb-body{flex-direction:column;gap:18px;max-width:92vw;max-height:88vh;overflow:auto;padding-top:56px}.lb-img img{max-height:52vh}.lb-text{flex:none;min-width:0;width:100%}.lb-nav{font-size:40px;top:34%}}
+
+/* slider arrows */
+.collage-wrap{position:relative}
+.collage{scrollbar-width:none}.collage::-webkit-scrollbar{display:none}
+.cg-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 10px rgba(0,0,0,.25);font-size:30px;line-height:1;cursor:pointer;color:#222;padding:0 0 4px}
+.cg-nav:hover{background:#fff;color:var(--red)}
+.cg-prev{left:12px}.cg-next{right:12px}
