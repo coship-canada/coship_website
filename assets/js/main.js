@@ -240,3 +240,14 @@
   wrap.querySelector('.cg-next').addEventListener('click', function () { go(1); });
   box.addEventListener('keydown', function (e) { if (e.target !== box) return; if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); });
 })();
+
+/* back-to-top button */
+(function () {
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'to-top'; b.setAttribute('aria-label', 'Back to top'); b.hidden = true;
+  b.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 16l8-8 8 8z" fill="#fff"/></svg>';
+  document.body.appendChild(b);
+  b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  function upd() { b.hidden = (window.pageYOffset || document.documentElement.scrollTop) < 300; }
+  window.addEventListener('scroll', upd, { passive: true }); upd();
+})();
