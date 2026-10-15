@@ -220,3 +220,8 @@ details.faq summary{font-size:19px}
 .loc dl{padding:0;grid-template-columns:90px 1fr;font-size:17px}
 .loc .map{height:380px;border-radius:var(--radius)}
 @media (max-width:760px){.loc.on{grid-template-columns:1fr}.loc-tab{padding:10px 14px;font-size:15.5px}.loc .map{height:280px}}
+.contact-cards img{height:56px;width:auto;object-fit:contain}
+.features img,.feature img{width:56px;height:56px;object-fit:contain}
+.contact-cards .ccard{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px}
+.contact-cards .ccard h3{margin:.2em 0 0}.contact-cards .ccard p{margin:0}
+.mail-ico{height:56px;display:flex;align-items:center;font-size:40px;line-height:1}
