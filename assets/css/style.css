@@ -147,3 +147,18 @@ label.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}.check 
 }
 .rating img{height:48px;width:auto;border-radius:6px}.rating img:last-child{height:28px}
 .foot-logo{height:36px;width:auto}
+
+/* tracking hero */
+.track-hero{background-size:cover;background-position:center right;padding:64px 0 56px;position:relative}
+.track-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.75) 45%,rgba(255,255,255,0) 80%)}
+.track-hero .wrap{position:relative}
+.track-hero-in{max-width:560px}
+.track-hero h1{margin:0 0 .3em;font-size:clamp(34px,5vw,56px)}
+.track-hero .track-form{margin:20px 0 0}
+.track-body{padding:0 0 56px}
+.track-body .track-result{margin-top:16px}
+.track-card{display:flex;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 6px 24px rgba(0,0,0,.08);padding:20px 28px;margin-top:-28px;position:relative}
+.track-card img{width:120px;height:auto;flex:none}
+.track-card .since{font-size:20px;font-weight:700;margin:0 0 6px}
+.track-card .btn-row{margin:8px 0 0}
+@media (max-width:640px){.track-hero{padding:40px 0 44px}.track-hero::before{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.6))}.track-card{flex-direction:column;text-align:center}.track-card .btn-row{justify-content:center}}

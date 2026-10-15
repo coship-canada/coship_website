@@ -439,18 +439,26 @@ function trackingBody(lang, partner) {
     [ko ? '택배' : 'Courier', '/courier-ecommerce']
   ];
   return `
-<section class="banner"><img src="${imgSrc('62e435_a35cd7c27dd64f64ba8025e9fc872c34~mv2.jpeg')}" alt=""></section>
-<section class="sec"><div class="wrap narrow">
+<section class="track-hero" style="background-image:url('${imgSrc('62e435_a35cd7c27dd64f64ba8025e9fc872c34~mv2.jpeg')}')"><div class="wrap">
+  <div class="track-hero-in">
   <h1>${ko ? '배송조회하기' : 'Tracking'}</h1>
   <p class="lead">${ko ? '2007년부터 한국-캐나다 운송을 전문으로 해온 캐나다 운송 대표, 캐나다쉬핑' : 'Canada-based logistics company since 2007, specializing in Korea–Canada shipping'}</p>
   <form class="track-form" id="track-form" data-api="${esc(site.trackingApi)}" data-nf="${esc(ui.trackNotFound)}" data-err="${esc(ui.trackError)}" data-empty="${esc(ui.trackEmpty)}">
     <input id="track-no" name="no" inputmode="latin" autocomplete="off" placeholder="${esc(ui.trackingPlaceholder)}" aria-label="${esc(ui.trackingPlaceholder)}">
     <button class="btn" type="submit">${esc(ui.trackBtn)}</button>
   </form>
+  </div>
+</div></section>
+<section class="track-body"><div class="wrap">
   <iframe id="track-result" class="track-result" title="Tracking result" src="${embedSrc('tracking-result', lang)}" scrolling="no"></iframe>
-  ${partner ? `<p class="center">${ko ? '캐나다 현지 배송' : 'Final delivery by'} <a class="btn ghost small" href="https://www.canadapost-postescanada.ca/track-reperage/en/home" target="_blank" rel="noopener">${ko ? '캐나다포스트 배송조회' : 'Track with Canada Post'}</a></p>` : ''}
-  <p class="center muted">Canada–Korea · Since 2007</p>
-  <div class="btn-row center">${links.map(([t, h]) => `<a class="btn ghost small" href="${url(L.prefix + h)}">${esc(t)}</a>`).join('')}</div>
+  <div class="track-card">
+    <img src="${imgSrc('62e435_f465d24f8ce24a84ab6d23a92f2b35c1~mv2.png')}" alt="" loading="lazy">
+    <div>
+      ${partner ? `<p>${ko ? '캐나다 현지 배송' : 'Final delivery by'} <a class="btn ghost small" href="https://www.canadapost-postescanada.ca/track-reperage/en/home" target="_blank" rel="noopener">${ko ? '캐나다포스트 배송조회' : 'Track with Canada Post'}</a></p>` : ''}
+      <p class="since">Canada–Korea · Since 2007</p>
+      <div class="btn-row">${links.map(([t, h]) => `<a class="btn ghost small" href="${url(L.prefix + h)}">${esc(t)} ›</a>`).join('')}</div>
+    </div>
+  </div>
 </div></section>`;
 }
 
