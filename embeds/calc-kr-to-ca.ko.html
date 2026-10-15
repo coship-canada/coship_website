@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COSHIP 한국→캐나다 배송비 계산기</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", "Apple SD Gothic Neo", Arial, sans-serif; background: transparent; color: #222; font-size: 20px; overflow: hidden; }
+  
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #bbb; }
+
+  .calc-wrap { 
+    max-width: 950px; 
+    height: 720px; 
+    margin: 0 auto; 
+    background: #fff; 
+    border-radius: 12px; 
+    border: 1px solid #e5e5e5;
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .calc-header { background: #fff; flex-shrink: 0; }
+  .main-tabs { display: flex; border-bottom: 2px solid #eee; background: #fff; }
+  .main-tab {
+    flex: 1; padding: 18px 0; text-align: center; font-size: 20px; font-weight: 700;
+    color: #666; cursor: pointer; border-bottom: 3px solid transparent;
+    transition: all 0.15s; letter-spacing: 0.2px;
+  }
+  .main-tab.active { color: #c8102e; border-bottom: 3px solid #c8102e; }
+  .main-tab:hover:not(.active) { color: #555; }
+
+  .calc-body { 
+    display: flex; 
+    flex: 1; 
+    overflow: hidden; 
+  }
+
+  .calc-left { 
+    flex: 0 0 460px; 
+    padding: 24px; 
+    border-right: 1px solid #eee; 
+    overflow-y: auto; 
+  }
+
+  .calc-right { 
+    flex: 1; 
+    padding: 24px; 
+    background: #fdfdfd; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field { margin-bottom: 16px; }
+  .field-label { font-size: 20px; font-weight: 700; color: #555; letter-spacing: 0.4px; margin-bottom: 8px; }
+  select, input[type=number], input[type=text] {
+    width: 100%; padding: 14px 16px; border: 1.5px solid #ddd; border-radius: 8px;
+    font-size: 22px; color: #222; background: #fafafa; appearance: none;
+    -webkit-appearance: none; outline: none; transition: border-color 0.15s;
+  }
+  select::placeholder, input::placeholder { color: #888; font-size: 19px; }
+  select:focus, input:focus { border-color: #c8102e; background: #fff; }
+  
+  .select-wrap { position: relative; }
+  .select-wrap::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #555; pointer-events: none; font-size: 20px; }
+
+  .inputs-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 4px; }
+  .field-hint { font-size: 17px; color: #777; margin-top: 4px; line-height: 1.4; }
+
+  .quote-btn {
+    width: 100%; padding: 18px; background: #c8102e; color: #fff; border: none;
+    border-radius: 8px; font-size: 24px; font-weight: 700; cursor: pointer;
+    margin-top: 10px; transition: background 0.15s; letter-spacing: 0.3px;
+  }
+  .quote-btn:hover { background: #a50d26; }
+  .quote-btn:active { transform: scale(0.99); }
+
+  .extra-fees-box { background: #fff; border: 1.5px solid #eee; border-radius: 8px; margin-top: 20px; overflow: hidden; }
+  .extra-fees-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; cursor: pointer; background: #f9f9f9; }
+  .extra-fees-title { font-size: 19px; font-weight: 700; color: #444; }
+  .extra-fees-arrow { font-size: 22px; color: #444; transition: transform 0.2s; }
+  .extra-fees-arrow.open { transform: rotate(180deg); }
+  .extra-fees-list { list-style: none; padding: 12px 16px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .extra-fees-list li { display: flex; justify-content: space-between; font-size: 18px; color: #555; border-bottom: 1px dashed #eee; padding-bottom: 6px; }
+  .extra-fees-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .extra-fees-list li span { font-weight: 700; color: #c8102e; }
+
+  .ocean-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .ocean-zone-card {
+    border: 2px solid #ddd; border-radius: 8px; padding: 14px 16px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    transition: border-color 0.15s, background 0.15s; background: #fafafa;
+  }
+  .ocean-zone-card:hover { border-color: #c8102e; background: #fff5f5; }
+  .ocean-zone-card.selected { border-color: #c8102e; background: #fff5f5; }
+  .ocean-zone-title { font-size: 19px; font-weight: 700; color: #111; margin-bottom: 4px; }
+  .ocean-zone-price { font-size: 24px; font-weight: 900; color: #c8102e; }
+  .ocean-zone-sub { font-size: 15px; color: #666; margin-top: 2px; }
+
+  .result-box { display: none; animation: fadeIn 0.3s ease-out; }
+  .result-box.visible { display: block; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .res-banner { background: #c8102e; border-radius: 12px 12px 0 0; padding: 24px; }
+  .res-banner-label { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 6px; }
+  .res-banner-price { font-size: 46px; font-weight: 900; color: #fff; line-height: 1; }
+  .res-banner-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .res-tag { background: rgba(255,255,255,0.2); color: #fff; font-size: 18px; font-weight: 600; padding: 6px 12px; border-radius: 20px; }
+  .res-banner-sub { font-size: 17px; color: rgba(255,255,255,0.92); margin-top: 14px; line-height: 1.4; }
+
+  .res-breakdown { border: 1.5px solid #eee; border-top: none; border-radius: 0 0 12px 12px; padding: 20px 24px; background: #fff; }
+  .res-breakdown-title { font-size: 20px; font-weight: 700; color: #333; margin-bottom: 14px; }
+  .res-row { display: flex; justify-content: space-between; align-items: center; font-size: 19px; color: #555; padding: 8px 0; border-bottom: 1px solid #f5f5f5; }
+  .res-row:last-child { border-bottom: none; }
+  .res-row-label { color: #444; }
+  .res-row-val { font-weight: 600; }
+  .res-row.total-row { border-top: 1.5px solid #eee; margin-top: 6px; padding-top: 14px; }
+  .res-row-val.total { color: #c8102e; font-size: 22px; font-weight: 800; }
+
+  .warn-box { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 19px; color: #7a5c00; display: none; line-height: 1.4; }
+  .warn-box.visible { display: block; }
+
+  .ocean-info-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 16px; }
+  .ocean-info-card { background: #fdfdfd; border: 1px solid #eee; border-radius: 8px; padding: 14px 16px; }
+  .ocean-info-card-title { font-size: 18px; font-weight: 700; color: #444; margin-bottom: 4px; }
+  .ocean-info-card-body { font-size: 17px; color: #666; line-height: 1.5; }
+  .ocean-info-card-body strong { color: #c8102e; font-weight: 700; }
+
+  .placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; padding: 20px; color: #999; }
+  .placeholder-title { font-size: 26px; font-weight: 700; color: #ccc; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .placeholder-desc { font-size: 20px; line-height: 1.5; color: #aaa; }
+  .placeholder-box { border: 2px dashed #ddd; border-radius: 12px; padding: 40px; width: 100%; max-width: 400px; }
+
+  @media (max-width: 768px) {
+    .calc-wrap { height: auto; min-height: 720px; }
+    .calc-body { flex-direction: column; overflow: visible; }
+    .calc-left { flex: none; width: 100%; border-right: none; border-bottom: 1px solid #eee; overflow-y: visible; }
+    .calc-right { overflow-y: visible; }
+  }
+</style>
+</head>
+<body>
+<div class="calc-wrap">
+
+  <div class="calc-header">
+    <div class="main-tabs">
+      <div class="main-tab active" id="tab-air" onclick="switchTab('air')">항공 특송</div>
+      <div class="main-tab" id="tab-ocean" onclick="switchTab('ocean')">선박 택배</div>
+    </div>
+  </div>
+
+  <div class="calc-body">
+    <div class="calc-left">
+      
+      <div id="air-fields">
+        <div class="inputs-grid-2">
+          <div class="field">
+            <div class="field-label">무게 (kg)</div>
+            <input type="text" inputmode="decimal" id="weight" placeholder="예: 5.5">
+          </div>
+          <div class="field">
+            <div class="field-label">가로 (cm)</div>
+            <input type="text" inputmode="decimal" id="length" placeholder="cm">
+          </div>
+        </div>
+        <div class="inputs-grid-2">
+          <div class="field">
+            <div class="field-label">세로 (cm)</div>
+            <input type="text" inputmode="decimal" id="width" placeholder="cm">
+          </div>
+          <div class="field">
+            <div class="field-label">높이 (cm)</div>
+            <input type="text" inputmode="decimal" id="height" placeholder="cm">
+          </div>
+        </div>
+        <div class="field-hint">※ 부피 무게(가로×세로×높이÷5000)와 실제 무게 중 더 큰 값이 적용됩니다.</div>
+        
+        <button class="quote-btn" onclick="calculateAir()">견적 확인하기</button>
+      </div>
+
+      <div id="ocean-fields" style="display:none;">
+        <div class="field-label">도착지 선택</div>
+        <div class="ocean-selector">
+          <div class="ocean-zone-card selected" id="zone-metro" onclick="selectZone('metro')">
+            <div class="ocean-zone-title">Metro Vancouver</div>
+            <div class="ocean-zone-price">₩89,000</div>
+            <div class="ocean-zone-sub">박스당 기본요금</div>
+          </div>
+          <div class="ocean-zone-card" id="zone-other" onclick="selectZone('other')">
+            <div class="ocean-zone-title">캐나다 전 지역 (Metro Vancouver 외)</div>
+            <div class="ocean-zone-price">₩144,000</div>
+            <div class="ocean-zone-sub">박스당 기본요금</div>
+          </div>
+        </div>
+
+        <div class="inputs-grid-2">
+          <div class="field">
+            <div class="field-label">박스 수량</div>
+            <input type="text" inputmode="numeric" id="ocean-boxes" placeholder="예: 3">
+          </div>
+          <div class="field">
+            <div class="field-label">박스당 무게 <span style="font-size:16px;font-weight:400;color:#888;">(선택)</span></div>
+            <input type="text" inputmode="decimal" id="ocean-weight" placeholder="예: 18.5">
+          </div>
+        </div>
+        <div class="field-hint">최대 20kg. 초과 시 1kg당 Metro Vancouver 1만 원, 그 외 지역 2만 원 추가.</div>
+
+        <button class="quote-btn" onclick="calculateOcean()">견적 확인하기</button>
+      </div>
+
+      <div class="extra-fees-box">
+        <div class="extra-fees-header" onclick="toggleFees()">
+          <div class="extra-fees-title">추가 서비스 요금 안내 (해당 시)</div>
+          <div id="fees-arrow" class="extra-fees-arrow">▾</div>
+        </div>
+        <div id="fees-body" style="display:none;margin-top:14px;">
+          <ul class="extra-fees-list">
+            <li>합포장 수수료 (6건째부터)<span>건당 2,000원</span></li>
+            <li>재포장/합포장 (Coship 박스)<span>박스당 10,000원~</span></li>
+            <li>주소 변경 (발송 후)<span>건당 15,000원</span></li>
+            <li>외곽/소도시 추가 운임<span>건당 35,000원</span></li>
+            <li>제주도 픽업 추가비용<span>박스당 10,000원</span></li>
+            <li>단프라박스 포장 추가 운임<span>박스당 20,000원</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-right" id="right-column">
+      
+      <div id="warn-box" class="warn-box"></div>
+
+      <div id="result-placeholder" class="placeholder">
+        <div class="placeholder-box">
+          <div class="placeholder-title">COSHIP 배송비 계산기</div>
+          <div class="placeholder-desc">좌측에 화물 정보를 입력하시면<br>숨은 비용 없는 정확한 견적을<br>이곳에서 바로 확인하실 수 있습니다.</div>
+        </div>
+      </div>
+
+      <div id="result-air" class="result-box"></div>
+      
+      <div id="ocean-result" class="result-box"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const RATES = [[1.0,57500],[1.5,65100],[2.0,71200],[2.5,75400],[3.0,83800],[3.5,88700],[4.0,93800],[4.5,99700],[5.0,105500],[5.5,119500],[6.0,128800],[6.5,134500],[7.0,139800],[7.5,144500],[8.0,149800],[8.5,155400],[9.0,160700],[9.5,166200],[10.0,171500],[11.0,180500],[11.5,185200],[12.0,189300],[12.5,193800],[13.0,198500],[14.0,207300],[15.0,222500],[16.0,232600],[17.0,242700],[18.0,252800],[19.0,262900],[20.0,273000],[23.0,297300],[25.0,321300]];
+const FUEL_SURCHARGE = 0.18;
+
+const OCEAN_RATES = { metro: 89000, other: 144000 };
+const OCEAN_FUEL = 20000;
+let selectedZone = 'metro';
+let currentTab = 'air';
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('tab-air').classList.toggle('active', tab === 'air');
+  document.getElementById('tab-ocean').classList.toggle('active', tab === 'ocean');
+  document.getElementById('air-fields').style.display = tab === 'air' ? 'block' : 'none';
+  document.getElementById('ocean-fields').style.display = tab === 'ocean' ? 'block' : 'none';
+  resetResults();
+}
+
+function resetResults() {
+  document.getElementById('result-air').classList.remove('visible');
+  document.getElementById('ocean-result').classList.remove('visible');
+  document.getElementById('warn-box').classList.remove('visible');
+  document.getElementById('result-placeholder').style.display = 'flex';
+  document.getElementById('right-column').scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function lookup(kg) {
+  for (let i = 0; i < RATES.length; i++) { if (kg <= RATES[i][0]) return RATES[i][1]; }
+  return null;
+}
+
+function selectZone(zone) {
+  selectedZone = zone;
+  document.getElementById('zone-metro').classList.toggle('selected', zone === 'metro');
+  document.getElementById('zone-other').classList.toggle('selected', zone === 'other');
+}
+
+function showError(msg) {
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-air').classList.remove('visible');
+  document.getElementById('ocean-result').classList.remove('visible');
+  
+  const warn = document.getElementById('warn-box');
+  warn.innerHTML = `<strong>안내:</strong> ${msg}`;
+  warn.classList.add('visible');
+}
+
+function calculateAir() {
+  const actualW = parseFloat(document.getElementById("weight").value) || 0;
+  if (actualW === 0) { showError('화물의 무게를 먼저 입력해 주세요.'); return; }
+
+  document.getElementById('warn-box').classList.remove('visible');
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('ocean-result').classList.remove('visible');
+
+  const L = parseFloat(document.getElementById("length").value) || 0;
+  const W = parseFloat(document.getElementById("width").value) || 0;
+  const H = parseFloat(document.getElementById("height").value) || 0;
+  
+  const volW = (L > 0 && W > 0 && H > 0) ? (L * W * H) / 5000 : 0;
+  const chargeableKg = Math.max(actualW, volW);
+  const isVolumetric = volW > actualW;
+
+  const resultEl = document.getElementById("result-air");
+
+  if (chargeableKg > 25) {
+    resultEl.innerHTML = `
+      <div class="res-banner" style="border-radius:12px;">
+        <div class="res-banner-label">별도 문의 안내</div>
+        <div style="font-size:22px;font-weight:700;color:#fff;margin:6px 0;">25kg 초과 화물은 맞춤 견적이 필요합니다.<br>고객센터로 별도 문의해 주세요.</div>
+      </div>`;
+    resultEl.classList.add('visible');
+    return;
+  }
+
+  const basePrice = lookup(chargeableKg);
+  if (!basePrice) return;
+  const fuelAmount = Math.round(basePrice * FUEL_SURCHARGE);
+  const totalWithFuel = basePrice + fuelAmount;
+  const weightLabel = isVolumetric ? `부피 무게: ${chargeableKg.toFixed(2)} kg` : `실제 무게: ${actualW.toFixed(1)} kg`;
+
+  resultEl.innerHTML = `
+    <div class="res-banner">
+      <div class="res-banner-label">코쉽 예상 항공 특송비 (KRW)</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="res-banner-price">₩${basePrice.toLocaleString()}</div>
+        <div style="background:rgba(255,255,255,0.25);border-radius:20px;padding:6px 14px;font-size:18px;font-weight:700;color:#fff;">+ 유류 할증료 <span style="font-size:16px;font-weight:400;">미포함</span></div>
+      </div>
+      <div class="res-banner-tags">
+        <span class="res-tag">적용 무게: ${chargeableKg.toFixed(2)} kg</span>
+        <span class="res-tag">${weightLabel}</span>
+      </div>
+      <div class="res-banner-sub">※ 캐나다 통관비 및 관/부가세는 수취인 부담입니다.<br>※ 평균 3~5 영업일 소요</div>
+    </div>
+    <div class="res-breakdown">
+      <div class="res-breakdown-title">요금 상세 내역</div>
+      <div class="res-row"><span class="res-row-label">기본 운송료</span><span class="res-row-val">₩${basePrice.toLocaleString()}</span></div>
+      <div class="res-row total-row"><span class="res-row-label" style="font-weight:700;color:#111;">기본 운임 합계</span><span class="res-row-val total">₩${basePrice.toLocaleString()}</span></div>
+    </div>
+    <div style="margin-top:16px;border:1.5px solid #f5c0c0;border-radius:10px;overflow:hidden;">
+      <div style="background:#fff5f5;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.fuel-arrow').style.transform=this.nextElementSibling.style.display==='none'?'':'rotate(180deg)';">
+        <span style="font-size:20px;font-weight:700;color:#c8102e;">긴급 유류 할증료 포함 견적 확인</span>
+        <span class="fuel-arrow" style="font-size:24px;color:#c8102e;transition:transform 0.2s;">▾</span>
+      </div>
+      <div style="display:none;padding:16px 20px;background:#fff;">
+        <p style="font-size:17px;color:#555;line-height:1.5;margin-bottom:12px;">최근 중동 정세 불안으로 인해 한시적으로 18%의 긴급 유류 할증료가 적용되고 있습니다. 이는 기본 요금 인상이 아니며 유가 안정 시 해제될 수 있습니다.</p>
+        <div style="background:#fff5f5;border-radius:8px;padding:16px;">
+          <div style="display:flex;justify-content:space-between;font-size:20px;color:#555;padding:5px 0;">
+            <span>기본 운임 합계</span><span style="font-weight:600;color:#333;">₩${basePrice.toLocaleString()}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:20px;color:#555;padding:5px 0;border-bottom:1px solid #f0c0c0;">
+            <span>긴급 유류 할증료 (18%)</span><span style="font-weight:700;color:#c8102e;">+₩${fuelAmount.toLocaleString()}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:24px;font-weight:800;color:#c8102e;padding:12px 0 0;">
+            <span>유류 할증료 포함 최종 금액</span><span>₩${totalWithFuel.toLocaleString()}</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  
+  resultEl.classList.add('visible');
+  
+  const warns = [];
+  if (L > 100 || W > 100 || H > 100) warns.push("한 변이 1m를 초과합니다 — 배송 불가 또는 대형 화물 추가 요금이 발생할 수 있습니다.");
+  if (warns.length) { 
+    const warnEl = document.getElementById("warn-box");
+    warnEl.innerHTML = warns.join("<br>"); 
+    warnEl.classList.add('visible'); 
+  }
+}
+
+function calculateOcean() {
+  const boxes = parseInt(document.getElementById('ocean-boxes').value) || 0;
+  if (boxes === 0) { showError('박스 수량을 입력해 주세요.'); return; }
+
+  document.getElementById('warn-box').classList.remove('visible');
+  document.getElementById('result-placeholder').style.display = 'none';
+  document.getElementById('result-air').classList.remove('visible');
+
+  const weightPerBox = parseFloat(document.getElementById('ocean-weight').value) || 0;
+  const resultEl = document.getElementById('ocean-result');
+  
+  const baseRate = OCEAN_RATES[selectedZone];
+  const baseTotal = baseRate * boxes;
+  const fuelTotal = OCEAN_FUEL * boxes;
+  
+  let overweightTotal = 0, overweightNote = '';
+  if (weightPerBox > 20) {
+    const excessKg = weightPerBox - 20;
+    const overweightRate = selectedZone === 'metro' ? 10000 : 20000;
+    overweightTotal = Math.ceil(excessKg) * overweightRate * boxes;
+    overweightNote = `(초과 ${excessKg.toFixed(1)}kg × ₩${overweightRate.toLocaleString()} × ${boxes}박스)`;
+  }
+  
+  const basePlusOverweight = baseTotal + overweightTotal;
+  const grandTotal = baseTotal + fuelTotal + overweightTotal;
+  const zoneName = selectedZone === 'metro' ? 'Metro Vancouver' : '캐나다 전 지역 (Metro Vancouver 외)';
+
+  let html = `
+    <div class="res-banner">
+      <div class="res-banner-label">코쉽 선박 택배 예상 운송비 (KRW)</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="res-banner-price">₩${basePlusOverweight.toLocaleString()}</div>
+        <div style="background:rgba(255,255,255,0.25);border-radius:20px;padding:6px 14px;font-size:18px;font-weight:700;color:#fff;">+ 유류 할증료 <span style="font-size:16px;font-weight:400;">미포함</span></div>
+      </div>
+      <div class="res-banner-sub">※ 캐나다 통관비 별도 발생 · 관/부가세는 수취인 부담입니다.</div>
+    </div>
+    
+    <div class="ocean-info-grid">
+      <div class="ocean-info-card">
+        <div class="ocean-info-card-title">제한 사이즈</div>
+        <div class="ocean-info-card-body">세 변의 합 <strong>150cm 미만</strong> (우체국 5호 박스 가능)</div>
+      </div>
+      <div class="ocean-info-card">
+        <div class="ocean-info-card-title">무게 초과 규정</div>
+        <div class="ocean-info-card-body">박스당 기본 최대 <strong>20kg</strong>.<br>초과 시 1kg당 <strong>Metro Vancouver 1만 원, 그 외 지역 2만 원</strong> 추가 발생.</div>
+      </div>
+      <div class="ocean-info-card">
+        <div class="ocean-info-card-title">통관비 안내</div>
+        <div class="ocean-info-card-body">박스당 <strong>CAD $20</strong> 별도 청구.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border:1.5px solid #f5c0c0;border-radius:10px;overflow:hidden;">
+      <div style="background:#fff5f5;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.fuel-arrow').style.transform=this.nextElementSibling.style.display==='none'?'':'rotate(180deg)';">
+        <span style="font-size:20px;font-weight:700;color:#c8102e;">긴급 유류 할증료 포함 견적 확인</span>
+        <span class="fuel-arrow" style="font-size:24px;color:#c8102e;transition:transform 0.2s;">▾</span>
+      </div>
+      <div style="display:none;padding:16px 20px;background:#fff;">
+        <p style="font-size:17px;color:#555;line-height:1.5;margin-bottom:12px;">최근 국제 해상 운임 및 유가 변동으로 인해 현재 박스당 <strong>20,000원</strong>의 긴급 유류 할증료가 한시적으로 적용 중입니다.</p>
+        <div style="background:#fff5f5;border-radius:8px;padding:16px;">
+          <div style="display:flex;justify-content:space-between;font-size:20px;color:#555;padding:5px 0;">
+            <span>기본 운임 (${zoneName}) × ${boxes}박스</span><span style="font-weight:600;color:#333;">₩${baseTotal.toLocaleString()}</span>
+          </div>`;
+          
+  if (overweightTotal > 0) {
+    html += `<div style="display:flex;justify-content:space-between;font-size:20px;color:#555;padding:5px 0;">
+              <span>무게 초과 추가 요금 ${overweightNote}</span><span style="font-weight:600;color:#333;">₩${overweightTotal.toLocaleString()}</span>
+             </div>`;
+  }
+
+  html += `<div style="display:flex;justify-content:space-between;font-size:20px;color:#555;padding:5px 0;border-bottom:1px solid #f0c0c0;">
+            <span>긴급 유류 할증료 (20,000원 × ${boxes}박스)</span><span style="font-weight:700;color:#c8102e;">+₩${fuelTotal.toLocaleString()}</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:24px;font-weight:800;color:#c8102e;padding:12px 0 0;">
+            <span>유류 할증료 포함 최종 금액</span><span>₩${grandTotal.toLocaleString()}</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  resultEl.innerHTML = html;
+  resultEl.classList.add('visible');
+}
+
+function toggleFees() {
+  const body = document.getElementById('fees-body');
+  const arrow = document.getElementById('fees-arrow');
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  arrow.classList.toggle('open', !isOpen);
+}
+
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage({ type: 'iwantiframe', height: height }, '*');
+}
+window.addEventListener('load', sendHeight);
+</script>
+</body>
+</html>
