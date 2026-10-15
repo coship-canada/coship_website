@@ -313,3 +313,25 @@ body.lb-open .to-top{display:none}
 .ct{margin:5px;height:auto;border-radius:6px}
 .cc-big .ct{height:610px}
 @media (max-width:640px){.cc-grid{grid-template-rows:235px 235px}.cc-big .ct{height:460px}}
+
+/* ---- header + drawer menu (modelled on buykorea.ca) ---- */
+.site-header.top{background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .bar{height:72px;padding-top:0;padding-bottom:0}
+.menu-btn{font-family:inherit;font-size:.9rem;font-weight:600;line-height:1;letter-spacing:.14em;color:var(--ink);background:none;border:0;padding:12px 4px;cursor:pointer}
+.menu-btn:hover{color:var(--red)}
+.scrim{position:fixed;inset:0;z-index:120;background:rgba(20,20,22,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.scrim[hidden]{display:none}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:130;width:min(360px,88vw);background:#fff;padding:28px 28px 40px;overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility .3s;box-shadow:-20px 0 50px -20px rgba(0,0,0,.25)}
+body.menu-open .drawer{transform:none;visibility:visible}
+body.menu-open{overflow:hidden}
+.drawer .x{display:block;margin-left:auto;font-family:inherit;font-size:2.2rem;font-weight:300;line-height:1;background:none;border:0;color:var(--ink);cursor:pointer;padding:0 4px}
+.drawer .icons{display:flex;flex-wrap:wrap;gap:22px;margin:18px 0 30px 4px}
+.drawer .icons a{color:var(--ink)}.drawer .icons a:hover{color:var(--red)}
+.drawer .grp{padding:18px 0;border-top:1px solid var(--line)}
+.drawer .grp:first-child{border-top:0;padding-top:0}
+.drawer .grp a,.drawer .grp .h{display:block;text-decoration:none}
+.drawer .h{font-weight:700;color:var(--ink);font-size:1.05rem;letter-spacing:.02em}
+.drawer a.h:hover{color:var(--red)}
+.drawer .sub{margin-top:8px;color:var(--muted);font-size:.97rem}
+.drawer .sub2{margin-top:4px;padding-left:14px;font-size:.88rem}
+.drawer .sub:hover{color:var(--red)}

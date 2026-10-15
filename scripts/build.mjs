@@ -266,6 +266,31 @@ function navHtml(L) {
   return `<ul class="menu">${L.nav.map(item).join('')}</ul>`;
 }
 
+function drawerHtml(L, langHref, other) {
+  const ico = {
+    instagram: '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/>',
+    youtube: '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/>',
+    whatsapp: '<path d="M4 20l1.2-4A8 8 0 1 1 8.2 19z"/><path d="M9 8.5c.3 2.6 2.4 4.7 5 5l1-1.2-1.7-1-.8.7a4 4 0 0 1-1.6-1.6l.7-.8-1-1.7z" fill="currentColor" stroke="none"/>',
+    kakao: '<path d="M12 4C7.3 4 3.5 7 3.5 10.7c0 2.4 1.6 4.5 4 5.7L6.7 20l3.7-2.4c.5.1 1 .1 1.6.1 4.7 0 8.5-3 8.5-6.7S16.7 4 12 4z"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+    phone: '<path d="M6.5 3.5 9 3l1.8 4.3-2 1.4a11 11 0 0 0 5.5 5.5l1.4-2L20 14l-.5 2.5a2.5 2.5 0 0 1-2.5 2A13.5 13.5 0 0 1 4.5 6a2.5 2.5 0 0 1 2-2.5z"/>'
+  };
+  const icon = (k, href, label, ext) => `<a href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''} aria-label="${label}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ico[k]}</svg></a>`;
+  const s = site.social;
+  const icons = icon('instagram', s.instagram, 'Instagram', 1) + icon('youtube', s.youtube, 'YouTube', 1) + icon('whatsapp', s.whatsapp, 'WhatsApp', 1) + icon('kakao', s.kakao, 'KakaoTalk', 1) + icon('mail', 'mailto:' + site.contactEmail, 'Email') + icon('phone', 'tel:+1-604-455-1000', 'Phone');
+  const sub = (n, cls = 'sub') => `<a class="${cls}" href="${url(n.h)}">${esc(n.t)}</a>`;
+  const grp = (n) => {
+    const kids = (n.c || []).map((c) => sub(c) + (c.c || []).map((d) => sub(d, 'sub sub2')).join('')).join('');
+    return `<div class="grp">${n.h ? `<a class="h" href="${url(n.h)}">${esc(n.t)}</a>` : `<span class="h">${esc(n.t)}</span>`}${kids}</div>`;
+  };
+  return `<div class="scrim" hidden></div>
+<aside id="drawer" class="drawer" aria-label="Menu" aria-hidden="true" inert>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <div class="icons">${icons}</div>
+  <nav>${L.nav.map(grp).join('')}<div class="grp"><a class="h" href="${langHref}" hreflang="${other.lang}">${esc(L.otherLabel)}</a></div></nav>
+</aside>`;
+}
+
 function altPath(p, lang) {
   if (lang === 'en') return p === '/' ? '/ko' : '/ko' + p;
   return p === '/ko' ? '/' : p.replace(/^\/ko/, '') || '/';
@@ -296,15 +321,13 @@ ${altOK ? `<link rel="alternate" hreflang="${other.lang}" href="${site.siteUrl}$
 ${extraHead}
 </head>
 <body>
-<header class="site-header">
+<header class="site-header top">
   <div class="bar">
     <a class="logo" href="${url(L.prefix || '/')}"><img src="${imgSrc(site.logo)}" alt="COSHIP" height="40"></a>
-    <button class="burger" aria-label="${esc(ui.menu)}" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
-    <nav id="mainnav">${navHtml(L)}
-      <a class="lang" href="${altOK ? url(altP) : url(other.prefix || '/')}" hreflang="${other.lang}">${esc(L.otherLabel)}</a>
-    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer">MENU</button>
   </div>
 </header>
+${drawerHtml(L, altOK ? url(altP) : url(other.prefix || '/'), other)}
 <main>
 ${body}
 </main>

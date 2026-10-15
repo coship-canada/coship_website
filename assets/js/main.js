@@ -276,3 +276,21 @@
   function upd() { b.hidden = (window.pageYOffset || document.documentElement.scrollTop) < 300; }
   window.addEventListener('scroll', upd, { passive: true }); upd();
 })();
+
+/* drawer menu (like buykorea.ca) */
+(function () {
+  var btn = document.querySelector('.menu-btn'), drawer = document.getElementById('drawer'), scrim = document.querySelector('.scrim');
+  if (!btn || !drawer) return;
+  function set(open) {
+    document.body.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    drawer.setAttribute('aria-hidden', String(!open));
+    if (open) { drawer.removeAttribute('inert'); scrim.hidden = false; drawer.querySelector('.x').focus(); }
+    else { drawer.setAttribute('inert', ''); scrim.hidden = true; btn.focus(); }
+  }
+  btn.addEventListener('click', function () { set(true); });
+  drawer.querySelector('.x').addEventListener('click', function () { set(false); });
+  scrim.addEventListener('click', function () { set(false); });
+  drawer.addEventListener('click', function (e) { var a = e.target.closest('a'); if (a && !a.hasAttribute('target')) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) set(false); });
+})();
