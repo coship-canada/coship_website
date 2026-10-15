@@ -355,6 +355,28 @@ function locationsHtml(lang) {
   return `<div class="locations" data-tabs><div class="loc-tabs" role="tablist">${tabs}</div>${panels}</div>`;
 }
 
+const COLLAGE = [
+  ['62e435_e4d621d7af914b609003d0396d37ec78~mv2.jpg', 'COSHIP Head Office, Vancouver', 'Our home base and operation center in Coquitlam, BC'],
+  ['62e435_915866c41cfe403b9a0a254184130a43~mv2.png', 'Local Delivery', 'Last-mile delivery across Canada by our trusted team.'],
+  ['62e435_6a0698dca1424faf8e4fa6ae03d360b8~mv2.jpg', 'Professional Packing', 'Careful Packing with quality materials to protect what matters most.'],
+  ['62e435_cbde4d46f17f4ef8a3983a8bfbaf8ecb~mv2.png', 'International Vehicle Shipping', 'We move vehicles safely from origin to destination.'],
+  ['62e435_244f5bcc3d1d41d0942789efd5392295~mv2.jpeg', 'CBSA Bonded Warehouse', 'Secure storage and efficient handling in our CBSA-certified bonded facility.'],
+  ['62e435_ac7a4569084b43f79488ab83f0d0a6b9~mv2.jpg', 'COSHIP Head Office, Vancouver', ''],
+  ['62e435_3e7982259c6b4089b2580127133c6ab5~mv2.jpeg', 'COSHIP Head Office, Vancouver', ''],
+  ['62e435_c3fc9b6646a2479aa85f321c1d4ce6af~mv2.jpg', 'COSHIP Head Office, Vancouver', '']
+];
+// horizontal collage: one large tile, then a 2x2 block of small tiles, repeating (as on the original site)
+function collage() {
+  const tile = ([u, t, d], big) => `<figure class="ct${big ? ' big' : ''}"><img src="${imgSrc(u)}" alt="${esc(t)}" loading="lazy"><figcaption><strong>${esc(t)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</figcaption></figure>`;
+  const cols = []; let i = 0, big = true;
+  while (i < COLLAGE.length) {
+    if (big) { cols.push(`<div class="cc cc-big">${tile(COLLAGE[i], true)}</div>`); i += 1; }
+    else { cols.push(`<div class="cc cc-grid">${COLLAGE.slice(i, i + 4).map((x) => tile(x)).join('')}</div>`); i += 4; }
+    big = !big;
+  }
+  return `<div class="collage" tabindex="0" aria-label="Gallery">${cols.join('')}</div>`;
+}
+
 function homeBody(lang) {
   const L = site[lang]; const H = L.home;
   const cards = H.cards.map((c) => `<article class="card">
@@ -383,7 +405,7 @@ ${H.slides.map((s, k) => `  <div class="slide${k === 0 ? ' on' : ''}" style="bac
 </div></section>
 <section class="sec alt"><div class="wrap">
   <p class="kicker">${esc(H.galleryKicker)}</p><h2>${esc(H.galleryTitle)}</h2><p class="center">${esc(H.gallerySub)}</p>
-  <div class="gallery">${H.gallery.map((g) => `<a href="${imgSrc(g)}" target="_blank" rel="noopener"><img src="${imgSrc(g)}" alt="" loading="lazy"></a>`).join('')}</div>
+  ${collage(H.gallery)}
 </div></section>
 <section class="sec"><div class="wrap"><h2>${esc(L.ui.locations)}</h2>${locationsHtml(lang)}</div></section>`;
 }
