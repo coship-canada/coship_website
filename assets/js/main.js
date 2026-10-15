@@ -81,13 +81,17 @@
     });
 
     var DATE_RE = /\d{4}[-./]\d{1,2}[-./]\d{1,2}/;
-    function pickKey(o, keys) { for (var i = 0; i < keys.length; i++) { var v = o[keys[i]]; if (v !== undefined && v !== null && String(v).trim() !== '') return String(v); } return ''; }
+    function pickKey(o, keys) {
+      var lower = {}; for (var k in o) lower[k.toLowerCase()] = o[k];
+      for (var i = 0; i < keys.length; i++) { var v = lower[keys[i]]; if (v !== undefined && v !== null) { v = String(v).trim(); if (v !== '' && v !== '-') return v; } }
+      return '';
+    }
     // The tracking API returns { resultJson: { mArray: [ { ..., details: [ {...} ] } ] } }.
     // The detail row keys are mapped heuristically; adjust KEYS if the API uses other names.
     var KEYS = {
-      date: ['date', 'dt', 'trackdt', 'trackingdt', 'eventdt', 'eventdate', 'regdt', 'scandt', 'procdt', 'datetime', 'time'],
+      date: ['date', 'dt', 'stepdt', 'trackdt', 'trackingdt', 'eventdt', 'eventdate', 'regdt', 'scandt', 'procdt', 'datetime', 'time'],
       status: ['status', 'statusnm', 'stepnm', 'step', 'event', 'eventnm', 'desc', 'description', 'stat', 'statnm', 'state'],
-      location: ['location', 'loc', 'locnm', 'place', 'placenm', 'city', 'site', 'branch'],
+      location: ['locationnm', 'location', 'loc', 'locnm', 'place', 'placenm', 'city', 'site', 'branch'],
       memo: ['memo', 'remark', 'remarks', 'rmk', 'note', 'comment']
     };
     function mapRow(d) {
