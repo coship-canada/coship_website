@@ -394,7 +394,7 @@ function collage() {
   const tile = (k, big) => { const [u, t, d] = COLLAGE[k % N]; return `<figure class="ct${big ? ' big' : ''}" data-i="${k % N}"><img src="${imgSrc(u)}" alt="${esc(t)}" loading="lazy"><figcaption><strong>${esc(t)}</strong>${d ? `<span>${esc(d)}</span>` : ''}</figcaption></figure>`; };
   // one cycle = N pairs of (1 large tile + 2x2 small tiles); the cycle is rendered twice so the slider can loop endlessly
   const cycle = () => { let k = 0, out = ''; for (let p = 0; p < N; p++) { out += `<div class="cc cc-big">${tile(k, true)}</div>`; k += 1; out += `<div class="cc cc-grid">${[0, 1, 2, 3].map((x) => tile(k + x)).join('')}</div>`; k += 4; } return `<div class="cycle">${out}</div>`; };
-  return `<div class="collage-wrap"><button type="button" class="cg-nav cg-prev" aria-label="Previous">‹</button><div class="collage" tabindex="0" aria-label="Gallery">${cycle()}${cycle().replace(/ data-i=/g, ' data-d="1" data-i=')}</div><button type="button" class="cg-nav cg-next" aria-label="Next">›</button></div>`;
+  return `<div class="collage-wrap"><button type="button" class="cg-nav cg-prev" aria-label="Previous"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg></button><div class="collage" tabindex="0" aria-label="Gallery">${cycle()}${cycle().replace(/ data-i=/g, ' data-d="1" data-i=')}</div><button type="button" class="cg-nav cg-next" aria-label="Next"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></button></div>`;
 }
 
 function homeBody(lang) {
@@ -452,7 +452,7 @@ function formHtml(lang) {
     <div class="row"><label>${esc(ui.f_phone)}<input name="phone" type="tel" autocomplete="tel"></label>
     <label>${esc(ui.f_service)}<select name="service" id="f-service"><option value="">${esc(ui.f_choose)}</option>${opts}</select></label></div>
     <label>${esc(ui.f_message)}*<textarea name="message" rows="6" required></textarea></label>
-    <label class="check"><input type="checkbox" name="consent" required> <span>${esc(ui.f_consent)} <a href="${url(site[lang].prefix + '/privacypolicy')}" target="_blank">↗</a></span></label>
+    <label class="check"><input type="checkbox" name="consent" required> <span>${esc(ui.f_consent)} <a href="${url(site[lang].prefix + '/privacypolicy')}" target="_blank" class="ext" aria-label="Open"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></span></label>
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
     <button class="btn" type="submit">${esc(ui.f_send)}</button>
     <p class="form-msg" role="status"></p>
@@ -473,7 +473,7 @@ function contactBody(lang) {
   <p class="lead">${ko ? '해외이사 및 물류 운송에 대한 문의사항이 있으신가요? 무엇이든 편하게 물어보세요.' : 'Questions about shipping or logistics? We\'re here to help.'}</p>
 </div></div></section>
 <section class="contact-top"><div class="wrap">
-  <div class="contact-cards">${cards.map(([t, sub, h, im]) => `<a class="card ccard" href="${h}" ${h.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${im ? `<img src="${imgSrc(im)}" alt="" height="48">` : '<span class="mail-ico" aria-hidden="true">✉</span>'}<h3>${t}</h3><p>${esc(sub)}</p></a>`).join('')}</div>
+  <div class="contact-cards">${cards.map(([t, sub, h, im]) => `<a class="card ccard" href="${h}" ${h.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${im ? `<img src="${imgSrc(im)}" alt="" height="48">` : '<svg class="mail-ico" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>'}<h3>${t}</h3><p>${esc(sub)}</p></a>`).join('')}</div>
 </div></section>
 <section class="sec alt"><div class="wrap">
   <h2>${esc(ui.select_service)}</h2>
@@ -510,7 +510,7 @@ function trackingBody(lang, partner) {
     <div>
       ${partner ? `<p>${ko ? '캐나다 현지 배송' : 'Final delivery by'} <a class="btn ghost small" href="https://www.canadapost-postescanada.ca/track-reperage/en/home" target="_blank" rel="noopener">${ko ? '캐나다포스트 배송조회' : 'Track with Canada Post'}</a></p>` : ''}
       <p class="since">Canada–Korea · Since 2007</p>
-      <div class="chip-grid">${links.map(([t, h]) => `<a href="${url(L.prefix + h)}">${esc(t)} ›</a>`).join('')}</div>
+      <div class="chip-grid">${links.map(([t, h]) => `<a href="${url(L.prefix + h)}">${esc(t)} <svg viewBox="0 0 24 24" width="0.9em" height="0.9em" class="chev" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></a>`).join('')}</div>
     </div>
   </div>
 </div></section>`;

@@ -180,10 +180,10 @@
   function build() {
     lb = document.createElement('div');
     lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.hidden = true;
-    lb.innerHTML = '<button class="lb-fs" type="button" aria-label="Fullscreen">⤢</button><button class="lb-x" type="button" aria-label="Close">✕</button>' +
-      '<button class="lb-nav lb-prev" type="button" aria-label="Previous">‹</button>' +
+    lb.innerHTML = '<button class="lb-fs" type="button" aria-label="Fullscreen"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button><button class="lb-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>' +
+      '<button class="lb-nav lb-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg></button>' +
       '<div class="lb-body"><div class="lb-img"><img alt=""></div><div class="lb-text"><h3></h3><p></p></div></div>' +
-      '<button class="lb-nav lb-next" type="button" aria-label="Next">›</button>';
+      '<button class="lb-nav lb-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></button>';
     document.body.appendChild(lb);
     lb.querySelector('.lb-x').addEventListener('click', close);
     lb.querySelector('.lb-prev').addEventListener('click', function () { show(cur - 1); });
