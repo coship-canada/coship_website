@@ -78,11 +78,33 @@ function loadPages() {
 }
 
 // every uri whose alt marks it as an icon
+// natural size of a locally stored PNG/JPEG (null if unavailable)
+function imgSize(uri) {
+  try {
+    const f = path.join(ROOT, 'assets/img', uri.replace('~mv2', ''));
+    if (!fs.existsSync(f)) return null;
+    const d = fs.readFileSync(f);
+    if (d.length > 24 && d.readUInt32BE(0) === 0x89504e47) return [d.readUInt32BE(16), d.readUInt32BE(20)];
+    if (d[0] === 0xff && d[1] === 0xd8) { // JPEG: scan for SOF marker
+      let i = 2;
+      while (i < d.length - 9) {
+        if (d[i] !== 0xff) { i++; continue; }
+        const m = d[i + 1];
+        if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return [d.readUInt16BE(i + 7), d.readUInt16BE(i + 5)];
+        i += 2 + d.readUInt16BE(i + 2);
+      }
+    }
+  } catch (e) {}
+  return null;
+}
 function collectIcons(pages) {
   const set = new Set();
   for (const pg of pages) for (const l of pg.lines) {
-    const m = l.match(/^IMG: (\S+) \| alt=(.*)$/);
-    if (m && /-(light|fill)\b/i.test(m[2])) set.add(m[1]);
+    const m = l.match(/^IMG: (\S+)(?: \| alt=(.*))?$/);
+    if (!m) continue;
+    if (m[2] && /-(light|fill)\b/i.test(m[2])) { set.add(m[1]); continue; }
+    const s = imgSize(m[1]);   // small square-ish images are icons, not photos
+    if (s && s[0] <= 160 && s[1] <= 160) set.add(m[1]);
   }
   return set;
 }
