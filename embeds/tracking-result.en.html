@@ -228,6 +228,11 @@
       "공항세관", "중부권"
     ];
 
+    // the first (oldest) event shows where the parcel started
+    const first = ((rows[0].location || "") + " " + (rows[0].status || "")).toLowerCase();
+    if (/캐나다|canada|vancouver|yvr|toronto/.test(first)) return "CA_TO_KR";
+    if (/한국|인천|incheon|icn|안양|서울/.test(first)) return "KR_TO_CA";
+
     let caScore = 0;
     let krScore = 0;
 
@@ -251,6 +256,12 @@
 
   function statusToStep(s, direction) {
     s = (s || "").toLowerCase();
+    // Korean statuses returned by the tracking API
+    if (/배달\s*완료|배송\s*완료|인수\s*완료|수령/.test(s)) return 4;
+    if (/배달\s*준비|배달\s*출발|배송\s*출발|배송\s*중|집배원|배달/.test(s)) return 3;
+    if (/통관|세관|우편집중|물류센터|구분|교환/.test(s)) return 3;
+    if (/도착|입항|하기|하역/.test(s)) return 2;
+    if (/출고|출항|출발|선적|탑재|항공기/.test(s)) return 1;
     if (s === "delivered")                                  return 4;
     if (s.includes("delivered") && !s.includes("out for")) return 4;
     if (s.includes("out for delivery")) return 3;
